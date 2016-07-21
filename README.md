@@ -1,2 +1,2 @@
 # iluvcodingMain
-Iluvcoding.com's main site
+www.iluvcoding.com
