@@ -1,0 +1,51 @@
+<!--
+<div class="bar bar-header bar-positive">
+    <button class="button button-icon icon ion-ios7-arrow-back" onclick="window.history.back(-1)"></button>
+    <h1 class="title">充值记录</h1>
+</div>   -->
+<ion-content class="content content-01 has-footer">
+    <div class="list list-record">
+        <div ng-if="0 < itemslist.length" ng-repeat="order in itemslist">
+        <div class="item item-divider" ng-if="order.monthString != null">
+            <small>{{order.monthString}}</small>
+        </div>
+        <div class="item" ng-if="order.monthString == null">
+            <div class="radio-prizeIcon"><div class="radio-prize"><i class="radio"></i><p>{{order.facePric}}</p></div></div>
+            <p><span ng-bind="formatGameCount(order.gameCount)"></span></span><span>{{order.orderTime}}</span></p>
+            <span>¥{{order.cash}}</span>
+        </div>
+        </div>
+
+
+    </div>
+
+
+<!--
+   <ion-infinite-scroll
+            on-infinite="display()"
+            icon='ion-loading-d'
+            distance="10%">
+    </ion-infinite-scroll>-->
+
+
+    <ion-infinite-scroll
+            on-infinite="queryMore()"
+            icon='ion-loading-c'
+            ng-if="moreDataCanBeLoaded() < 1"
+            distance="1%">
+    </ion-infinite-scroll>
+</ion-content>
+
+<div class="item item-over" ng-show="0 == itemslist.length">
+    <div class="over-img">
+        <img src="http://pic.ofpay.com/cards/bank-of-Suzhou/img/over.png" alt="没有历史记录"/>
+    </div>
+    <p class="tip">没有充值记录</p>
+    <p>这里充值方便又快捷，还有优惠哦</p>
+</div>
+<div class="bar bar-footer bar-positive">
+    <button class="button button-icon icon ion-ios7-arrow-back" onclick="window.history.back(-1)">
+        <span>返回充值</span>
+    </button>
+</div>
+

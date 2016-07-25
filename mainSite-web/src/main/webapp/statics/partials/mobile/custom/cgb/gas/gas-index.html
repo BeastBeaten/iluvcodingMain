@@ -1,0 +1,86 @@
+<ion-content class="content content-01">
+    <div class="list list-p">
+        <div class="item recharge-input" ng-class="{'recharge-input-android':isAndroidClient}">
+            <input type="tel" id="gasCardNo" ng-model="data.gasCardNo" placeholder="请输入加油卡" ng-change="checkOilNO('1')" ng-focus="clearError('1')" ng-blur="checkOilNO('2')" >
+            <p class="region" ng-show="''!=data.gasCardName"><span ng-bind="data.gasCardName"></span></p>
+            <i class="icon-close-01 icon-close" ng-show="'' != data.gasCardNo" ng-click="clearError('3')"></i>
+            <i class="icon-close-01 icon-clock" ng-show="'' == data.gasCardNo" ng-click="showCookie()"></i>
+        </div>
+        <div class="item recharge-input-p" ng-show="!data.hasCookie && data.showCookie">
+            <p class="item-note-center pt15">没有最近的充值记录</p>
+        </div>
+        <div class="item recharge-input-p recharge-record" ng-show="data.hasCookie && data.showCookie">
+            <div ng-repeat="item in gasCardNos">
+                <p class="item-note-center item-note-p" ng-click="chooseGasCardNo(item.gasCardNo)">{{item.gasCardNo}}</p>
+                <p class="region"><span>{{item.gasCardName}}</span></p>
+
+            </div>
+            <a  class="item-note-center" ng-if="data.canCleanHistory" ng-click="clearCookie()">清空历史记录</a>
+        </div>
+
+    </div>
+
+    <p class="error-tip pb5 pl15" ng-show="''!=errorData.oilNOMsg"><span ng-bind="errorData.oilNOMsg"></span></p>
+    <div class="recharge-p-list">
+        <ul class="row row-wrap clearfix">
+
+            <li class="col-33" ng-repeat="item in faceValueList">
+                <a ng-show="!item.isOneFaceValue"  ng-class="{'row-p':item.stock,'checked':item.choosed,'disabled-p':!item.stock&&!data.isFirstInit}" ng-click="chooseValue(item)">
+                    <h3 ng-if="!data.isFirstInit">{{item.faceValue}}元</h3>
+                    <span ng-if="data.isFirstInit">{{item.faceValue}}元</span>
+                    <!--  <span ng-show="data.isFirstInit">{{item.faceValue}}元</span>
+                      <p ng-show="item.stock">{{item.price}}</p>
+                      <p ng-show="!item.stock">{{item.price}}</p>  -->
+                    <p>{{item.price}}</p>
+                </a>
+
+                <a ng-class="{'row-input-p':item.stock,'checked':''!=data.arbitraryAmount,'disabled-p':!item.stock&&!data.isFirstInit}"  ng-if="item.isOneFaceValue" >
+                    <input id="arbitrarycharge" ng-class="{'row-ios':isIosClient}" ng-model="data.arbitraryAmount" type="tel" min="1" max="4" placeholder="任意充" ng-disabled="!item.stock"
+                            ng-change="checkArbitraryAmount('1')"  ng-focus ="clearArbitraryAmountError('1')" ng-blur="clearArbitraryAmountError('2')"/>
+                    <!--<p ng-show="''==data.arbitraryAmount">{{item.faceValue}}元</p> -->
+                    <p ng-show="''!=data.arbitraryAmount">{{data.total}}</p>
+                </a>
+
+            </li>
+            <!--<li class="col-33">
+                <input class="row-center" id="arbitrarycharge" ng-model="data.arbitraryAmount" type="tel" min="1" max="4" placeholder="任意充"
+                       ng-change="checkArbitraryAmount('1')" ng-focus="clearArbitraryAmountError('1')" ng-blur="clearArbitraryAmountError('2')"/>
+            </li>  -->
+
+        </ul>
+    </div>
+
+    <p class="error-tip pb5 pl15" ng-show="''!=errorData.cardMsg"><span ng-bind="errorData.cardMsg"></span></p>
+    <p class="error-tip pb5 pl15" ng-show="''!=errorData.orderMsg"><span ng-bind="errorData.orderMsg"></span></p>
+    <p class="error-tip pb5 pl15" ng-show="''!=errorData.errorMsg"><span ng-bind="errorData.errorMsg"></span></p>
+
+    <div class="recharge-pay">
+        <ul class="promise clearfix">
+            <li class="promise-icon01">闪电到帐</li>
+            <li class="promise-icon02">不到账全额退款</li>
+        </ul>
+        <p class="xy">
+            <label for="" class="checkbox">
+                <input id="agreement" type="checkbox" checked ng-click ="clearError(4)">
+            </label>
+            同意<a ui-sref="agreement">《加油卡充值协议》</a>
+        </p>
+
+        <p class="error-tip pb5 pl15" ng-show="''!=errorData.agreementMsg"><span ng-bind="errorData.agreementMsg"></span></p>
+
+        <button class="button button-block button-positive"  ng-repeat="item in payList" ng-click="takeOrder($event,item)">{{data.payBtnName}}<span class="sum" ng-if="'' != data.cash">：￥{{data.cash}}元</span></button>
+
+    </div>
+
+    <div class="copyright">
+        <p class="link">
+            <a ng-click="goOrderCenter()"><i></i>订单查询</a>
+            ｜
+            <a ui-sref="recharge-desc"><i></i>充值说明</a>
+        </p>
+        <p class="logo"><a href="" target=""><img src="http://pic.ofcard.com/cards/mobile/img/ofcard-logo.png" style="width: 78px;"></a>
+            <br>本服务由易嵌联授权出售
+        </p>
+        <a class="tel" href="tel:{{userData.servicePhone}}"><i></i>24小时电话:&nbsp;<span ng-bind="userData.servicePhone"></span></a>
+    </div>
+</ion-content>

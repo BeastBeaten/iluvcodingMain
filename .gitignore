@@ -1,0 +1,14 @@
+*.exe
+*.zip
+*.rar
+*.via
+*.tmp
+*.err
+*.keep
+###########
+*.iml
+*.bak
+*.svn
+*.git
+*.idea
+target/

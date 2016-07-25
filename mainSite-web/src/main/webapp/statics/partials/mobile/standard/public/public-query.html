@@ -1,0 +1,42 @@
+<ion-content>
+    <div class="bar bar-header bar-positive">
+        <button onclick="history.back(-1);" class="button button-clear button-positive button-blue">取消</button>
+    </div>
+    <div class="content content-01 content-position-01 body-white">
+        <div class="conve-bill">
+            <div class="bill-header">
+				<span class="icon-conve-s">
+					<i ng-show="data.projectTypeId=='c2670'" class="water-s"></i>
+                    <i ng-show="data.projectTypeId=='c2680'" class="elec-s"></i>
+                    <i ng-show="data.projectTypeId=='c2681'" class="coal-s"></i>
+				</span>
+                应缴账单
+            </div>
+            <div class="list list-inset1" ng-show="publicData.arreasInfoList.length > 1">
+                <label class="item item-select item-icon-right">
+                    <select class="select-orig" ng-model="data.selectedArreasInfo"
+                            ng-options="arreasInfo.payMentDay for arreasInfo in publicData.arreasInfoList"
+                            ng-change="choosePayMentDay(data.selectedArreasInfo.balance, data.selectedArreasInfo.payMentDay)">
+                    </select>
+                    <a href="" class="ion-right">
+                        <i class="icon ion-ios7-arrow-down"></i>
+                    </a>
+                </label>
+            </div>
+            <div class="bill-body">
+                <p>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名:<span class="item-note">{{data.name}}</span></p>
+                <p>缴费单位:<span class="item-note">{{data.item}}</span></p>
+                <p>户&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号:<span class="item-note">{{data.gameCount}}</span></p>
+            </div>
+            <div class="bill-price">
+                <b class="price">{{data.cash}}</b>元
+            </div>
+            <p class="error-tip pb5 pl15" ng-show="''!=errorData.errorMsg"><span ng-bind="errorData.errorMsg"></span></p>
+            <button class="button button-block button-positive button-spacing"
+                    ng-disabled="data.cash==''"
+                    ng-repeat="item in payList" ng-click="takeOrder($event,item)">立即支付</button>
+        </div>
+
+    </div>
+    <!--</div>-->
+</ion-content>

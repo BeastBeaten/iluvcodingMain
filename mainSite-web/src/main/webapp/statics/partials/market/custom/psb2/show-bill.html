@@ -1,0 +1,114 @@
+<div class="bar bar-header bar-positive bar-refreshLife" ng-show="hasHeader">
+    <button class="button button-icon icon ion-ios7-arrow-back" onclick="window.history.go(-1);">返回</button>
+</div>
+<ion-content class="content active-refreshLife active-green" ng-class="{'has-header':hasHeader}">
+    <div class="gift-congra gift-congra-two">
+        <h2 ng-show="''!=marketBills">恭喜您！</h2>
+        <p ng-show="''!=marketBills">获得以下兑换券，赶快去兑换吧！</p>
+        <h2 ng-show="''==marketBills">&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+        <p ng-show="''==marketBills">&nbsp;&nbsp;&nbsp;&nbsp;</p>
+        <div ng-if="'2' == data.queryBillType">
+            <div class="select-month w250 select-month01">
+                <!--适应券的宽度加w250-->
+                <p>{{data.year}}</p>
+                <div class="select-div">
+                    <select ng-model="data.dateId" ng-change="chooseDate(data.dateId)">
+                        <option value="{{date.id}}" ng-repeat="date in dateList" ng-selected="date.selected">{{date.month + 1}}</option>
+                    </select>
+                </div>
+                <p class="select-dl">请选择查询月份</p>
+            </div>
+        </div>
+    </div>
+
+    <!--<div class="gift-congra ht02">-->
+        <!--&lt;!&ndash;月份选择加ht02&ndash;&gt;-->
+        <!--<h2 ng-show="''!=marketBills">您的兑换信息</h2>-->
+        <!--<h2 ng-show="''==marketBills">您未获得兑换券</h2>-->
+        <!--<div ng-if="'2' == data.queryBillType">-->
+            <!--<div class="select-month w250 select-month01">-->
+                <!--&lt;!&ndash;适应券的宽度加w250&ndash;&gt;-->
+                <!--<p>{{data.year}}</p>-->
+                <!--<div class="select-div" >-->
+                    <!--<select ng-model="data.dateId" ng-change="chooseDate(data.dateId)">-->
+                        <!--<option value="{{date.id}}" ng-repeat="date in dateList" ng-selected="date.selected">{{date.month + 1}}</option>-->
+                    <!--</select>-->
+                <!--</div>-->
+                <!--<p class="select-dl">请选择查询月份</p>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <!--<div class="gift-congra">-->
+        <!--<h2>恭喜您！</h2>-->
+        <!--<p>获得以下兑换券，赶快去兑换吧！</p>-->
+    <!--</div>-->
+    <!--<div class="coupons-title" ng-show="''!=marketNUBills && '2' == data.queryBillType">-->
+        <!--<h2>未兑换礼品：</h2>-->
+    <!--</div>-->
+    <div class="coupons" ng-show="''!=marketNUBills" ng-repeat = "bill in marketNUBills">
+        <div class="coupons-item">
+            <div class="body-top" ng-click="buy(bill)">
+                <div class="title">
+                    <p class="center">兑换券 &nbsp;</p>
+                    <h2>{{bill.cash}}<span>元</span></h2>
+                </div>
+            </div>
+            <div class="body-bottom">
+                <p>您的手机号****{{bill.uuid.substring(bill.uuid.length-8,bill.uuid.length-4)}}获得{{bill.cash}}元兑换券</p>
+            </div>
+            <i class="coupons-bg-left" ng-class="{'coupons-disabled':'1' == bill.consumerState,'coupons-checked':'0' == bill.consumerState}"></i>
+            <i class="coupons-bg-right" ng-class="{'coupons-disabled':'1' == bill.consumerState,'coupons-bg-right_unused':'0' == bill.consumerState}"></i>
+            <i class="coupons-bg"></i>
+            <p>请在{{bill.endTime.substring(0,10)}}之前兑换完毕</p>
+            <button class="activ-btn" type="button"  ng-class="{'activ-btn-grey':'9' == bill.state}" ng-disabled="'9' == bill.state" ng-click="buy(bill)">现在去兑换</button>
+        </div>
+    </div>
+
+    <!--<div class="coupons-title" ng-show="''!=marketUBills && '2' == data.queryBillType">-->
+        <!--<h2>已兑换礼品：</h2>-->
+    <!--</div>-->
+    <div class="coupons pt10 mt15" ng-show="''!=marketUBills" ng-repeat = "bill in marketUBills">
+        <!--mt15券一和券二的间距-->
+
+        <div class="coupons-item">
+            <div class="body-top" ng-click="buy(bill)">
+                <div class="title">
+                    <p class="center">兑换券 &nbsp;</p>
+                    <h2>{{bill.cash}}<span>元</span></h2>
+                </div>
+            </div>
+            <div class="body-bottom">
+                <p>您的手机号****{{bill.uuid.substring(bill.uuid.length-8,bill.uuid.length-4)}}获得{{bill.cash}}元兑换券</p>
+            </div>
+            <i class="coupons-bg-left" ng-class="{'coupons-disabled':'1' == bill.consumerState,'coupons-checked':'0' == bill.consumerState}"></i>
+            <i class="coupons-bg-right" ng-class="{'coupons-disabled':'1' == bill.consumerState,'coupons-bg-right_unused':'0' == bill.consumerState}"></i>
+            <i class="coupons-bg"></i>
+            <!--<p>请在{{bill.endTime.substring(0,10)}}之前兑换完毕</p>-->
+            <br/>
+            <button class="activ-btn" type="button" ng-click="buy(bill)">兑换详情</button>
+        </div>
+    </div>
+
+    <p ng-show="''==marketBills" class="coupons-none">您未获得兑换券</p>
+
+    <div class="gift-notes gift-notes02" style="margin-top:90px;" ng-click="showDesc()">
+        <p class="title-line">
+            <span></span>
+            <span>活动说明</span>
+            <span></span>
+            <!--<i class="arrow arrow-down"></i>-->
+        </p>
+    </div>
+    <div  class="gift-notes gift-notes02" style="height: 800px;">
+        <ul ng-show="data.isShowDesc">
+            <li>1、活动时间：<span>2016</span>年<span>1</span>月-<span>2016</span>年<span>7</span>月。</li>
+            <li>2、活动对象：<span>江苏邮储银行电子银行客户</span>。</li>
+            <li>3、活动内容：活动期间，客户在任意自然月内通过网银、手机银行办理百元以上的账务类交易达到<span>3笔</span>及以上，可于次月登陆我行微信公众号领取<span>精美礼品1份</span>。</li>
+            <li>4、活动流程：客户当月达到兑奖条件后，<span>次月20日12：00至25日24：00</span>起可登陆“邮储银行江苏分行”微信公众号兑奖专区，输入在我行预留的手机号码，通过系统验证符合条件后即可抢兑精美礼品一份，同一客户每月限兑换一份礼品。活动礼品为<span>30元</span>手机<span>话费</span>或主流知名<span>电商礼品卡</span>，<span>每月23500份</span>，兑完即止。当月取得获奖资格不影响次月继续获奖。本次活动中的电子银行账务类交易指个人网银、手机银行渠道办理的转账、支付、缴费、理财类交易，不含各类绿卡快捷支付交易、退货冲正交易。</li>
+            <li>5、客服电话：<span>025-69828520</span></li>
+            <li><a class="tip-service" href="http://kefu.easemob.com/webim/im.html?tenantId=12358"><i></i>在线客服</a></li>
+        </ul>
+    </div>
+
+</ion-content>

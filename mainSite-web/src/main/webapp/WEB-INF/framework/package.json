@@ -1,0 +1,21 @@
+{
+  "name": "openwev2js",
+  "version": "1.0.0",
+  "description": "对外合作项目js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "zhouqing",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-cssmin": "*",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-contrib-requirejs": "~0.4.1",
+    "grunt-angular-modularize": "0.1.0"
+  }
+}

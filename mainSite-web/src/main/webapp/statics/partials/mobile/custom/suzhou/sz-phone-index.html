@@ -1,0 +1,51 @@
+<!--
+<div class="bar bar-header bar-positive">
+    <button class="button button-icon icon ion-ios7-arrow-back" onclick="window.history.go(-2)"></button>
+    <h1 class="title">手机充值</h1>
+</div> -->
+<ion-content class="content content-01">
+    <div class="list list-border-bottom">
+
+        <div class="item recharge-input">
+            <input type="tel" id="gameCount" ng-model="data.gameCount"  ng-change="checkPhoneNo('1')" ng-focus="clearError('1')" ng-blur="clearError('2')" placeholder="请输入充值手机号码">
+            <i class="icon-close-01" ng-click="clearError(3)"></i>
+            <p class="region" id="cityin" ng-if="''!=data.cityin"><span ng-bind="data.cityin"></span></p>
+            <p class="region" id="phoneName" ng-show="''!=data.phoneName"></p>
+            <p id="phoneError" class="region error" ng-show="''!=errorData.phoneNoError"><span ng-bind="errorData.phoneNoError"></span></p>
+
+
+            <!--<a class="icon-hover"><i class="icon-close-01 icon-record" ng-click="txl()"></i></a>-->
+        </div>
+        <div class="item recharge-input-p recharge-record" ng-show="data.hasCookie && data.showCookie">
+            <div class="item-note-center item-note-p" ng-repeat="phoneInfo in phoneNoes | filter:data.gameCount">
+                <span ng-click="choosePhoneNo(phoneInfo)">{{phoneInfo.phoneNo}}</span>
+                <span ng-show="''!=phoneInfo.phoneName" ng-bind="phoneInfo.phoneName"></span>
+               <!-- <span>账号绑定号码</span> -->
+                <i class="icon-close-01" ng-click="deleteOneInCookie(phoneInfo.phoneNo)"></i>
+            </div>
+            <a href="#" class="item-note-center" ng-click="clearCookie()">清空全部充值记录</a>
+        </div>
+
+    </div>
+    <div class="recharge-p-list">
+        <ul class="row row-wrap clearfix">
+            <li class="col-33" ng-repeat="item in faceList">
+                <a class="row-p" ng-class="{'row-p-active':item.stock,'checked':item.choosed, 'activity-row-p':item.hasDiscount}" href="" ng-click="chooseValue($event,item.id)">
+                    <h3>{{item.value}}元</h3>
+                    <p>{{item.price}}</p>
+                    <i ng-show="item.hasDiscount"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+</ion-content>
+<div class="bar bar-footer copyright">
+    <p class="link">
+        <a ui-sref="servicedesc"><i></i>温馨提示</a>
+        ｜
+        <a ui-sref="order-query"><i></i>充值记录</a>
+
+
+    </p>
+
+</div>

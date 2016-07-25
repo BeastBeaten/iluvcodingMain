@@ -1,0 +1,78 @@
+
+<div class="title clearfix">
+    <a class="fr" ui-sref="gasOrderSearch">订单中心</a>
+    <h2>加油卡直充</h2>
+</div>
+<div class="content">
+    <!--<div class="subTitle">加油卡直充</div>-->
+    <form class="orderForm orderDetail">
+        <ul class="formList">
+
+            <li ng-show="data.getOilFlag">
+                <span class="label">&nbsp;</span>
+                <img src="http://pic.ofcard.com/cards/images/loading.gif" alt="" style="width:64px;height:64px;">
+            </li>
+            <li class="clearfix bill" ng-show="''!=data.peUserName">
+                <span class="label">户主：</span>
+                <span ng-bind="data.peUserName"></span>
+            </li>
+            <li class="clearfix">
+                <span class="label">商品名称：</span>
+                <div class="radio-g">
+                    <label ng-repeat="item in itemList"><input name="proName" type="radio" ng-checked="$index == 2" ng-click="chooseItem(item.id)">
+                        {{item.name}}</label>
+                </div>
+            </li>
+            <li class="clearfix">
+                <span class="label">加油卡卡号</span>
+                <input class="inputTxt placeholder" placeholder="请输入卡号" type="text" ng-model="data.gasCardNo" ng-blur="checkOilNO('2')" ng-change="checkOilNO('1')">
+                <div class="error" ng-show="'' != errorData.oilNOMsg">{{errorData.oilNOMsg}}</div>
+            </li>
+            <li class="pb0" ng-show="'' != data.gasCardNo">
+                <span class="label">可选面额： </span>
+                <a class="tag" href="javascript:void(0)" ng-repeat="item in faceValueList|orderBy:'parValue'" ng-class="{tagChecked:item.choosed,mt10:$index > 3,ml95:$index > 3 && $index % 4 == 0}" ng-click = "chooseFaceValue(item.faceValue)">{{item.vName}}</a>
+            </li>
+            <li class="clearfix" ng-show="data.isOneFaceValue && ''!= data.gasCardNo">
+                <span class="label">购买金额：</span>
+                <input class="inputTxt input-50p" type="text" ng-keyup="checkCardNum('1')" ng-blur="checkCardNum('2')" ng-model="data.cardNum" ng-disabled="''==data.cardId">
+                <span class="grey range">可购买范围：{{data.purNum}}</span>
+            </li>
+            <li class="clearfix" ng-show="'' != data.gasCardNo">
+                <span class="label">售价：</span><em class="orange" style="font-size: 24px;">{{data.cash}}</em> 元
+            </li>
+            <li>
+                <span class="label">&nbsp;</span>
+                <input class="btn" type="button" value="立即购买" ng-class="{btnDisabled:'' != errorData.oilNOMsg || '' != errorData.errorMsg || ''== data.cash}" ng-click = "submitForm($event)"/>
+                <span class="fail" ng-show = "null != errorData.errorMsg && ''!= errorData.errorMsg">{{errorData.errorMsg}}</span>
+            </li>
+        </ul>
+    </form>
+</div>
+
+<div ng-class = "{intro:true,w942:true}" ng-show="null != currentMenu.pic && '' != currentMenu.pic" style="width: 800px;">
+    <ul ng-class="{clearfix:true}">
+        <!--<li>
+            <div ng-class="{intro_li_cc:true}">
+                <p class="{{currentMenu.pic}}"><span ng-bind="currentMenu.title"></span></p>
+            </div>
+        </li> -->
+        <li ng-class="{introBg:true}">
+            <dl>
+                <dt><span ng-bind="currentMenu.descTitle"></span></dt>
+                <dd ng-repeat = "item in currentMenu.desc"><span ng-bind="item"></span></dd>
+            </dl>
+        </li>
+        <li ng-show="'' == userData.topClass">
+            <phoneserver></phoneserver>
+        </li>
+        <li ng-show="'vip' == userData.topClass">
+            <qqserver></qqserver>
+        </li>
+        <li ng-show="'jb' == userData.topClass">
+            <jbserver></jbserver>
+        </li>
+    </ul>
+
+</div>
+
+            

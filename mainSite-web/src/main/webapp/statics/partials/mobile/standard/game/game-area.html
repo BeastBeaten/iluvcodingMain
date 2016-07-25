@@ -1,0 +1,12 @@
+<div class="bar bar-header bar-positive bar-positive-01">
+    <button class="button button-clear button-positive button-blue" type="button" ng-click="chooseGameArea('')">取消</button>
+    <h1 class="title">选择大区</h1>
+</div>
+<ion-content class="content content-01 content-position body-white">
+    <div class="list bB1">
+        <a class="item item-icon-right item-list" ng-repeat="item in gameAreas" ng-click="chooseGameArea(item.areaName)">
+            {{item.areaName}}
+            <i class="icon ion-ios7-arrow-right"></i>
+        </a>
+    </div>
+</ion-content>

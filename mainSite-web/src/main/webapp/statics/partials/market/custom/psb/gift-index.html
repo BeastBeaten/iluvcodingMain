@@ -1,0 +1,102 @@
+<div class="bar bar-header bar-positive bar-refreshLife" ng-show="hasHeader">
+    <button class="button button-icon icon ion-ios7-arrow-back" onclick="window.history.go(-1);">返回</button>
+</div>
+<!--<ion-content class="content content-refreshLife" ng-class="{'has-header':hasHeader}">-->
+    <!--<div class="gift-congra">-->
+        <!--<h2>恭喜您！</h2>-->
+        <!--<p>您获得了{{data.billCash}}元代金券，可用于兑换以下面值礼品</p>-->
+    <!--</div>-->
+    <!--<div class="list list-gift">-->
+        <!--<h2>请选择您需要兑换的礼品</h2>-->
+        <!--<div class="gifts">-->
+            <!--<a href="" class="item" ng-repeat="card in cardList" ng-click="chooseGift(card)">-->
+                <!--<i class="{{card.icon}}"></i>-->
+                <!--<p class="title"><span>{{card.name}}</span></p>-->
+            <!--</a>-->
+        <!--</div>-->
+        <!--<div class="gift-rule" style="margin-top:20px;height:300px;">-->
+            <!--<p ng-click="showDesc()" style="padding-top: 10px;padding-bottom: 10px;">中奖说明<i ng-class="{'gift-arrow-down':data.isShowDesc,'gift-arrow-up':!data.isShowDesc}"></i></p>-->
+            <!--<ul ng-show="data.isShowDesc">-->
+                <!--<li>1.本次活动提供包括苏宁易购，京东，天猫，1号店，唯品会，亚马逊，携程任我行等七种电子券以及话费充值，其中电子券可在相应网站购买对应商品，具体范围详询官方网站。</li>-->
+                <!--<li>2.话费可实时充值，支持三大话费运营商。</li>-->
+                <!--<li>3.一切有关礼品可能产生的纠纷，均由礼品供应商负责。持卡人可发送邮件至service_feihan@163.com 咨询，由礼品供应商协助持卡人解决。</li>-->
+            <!--</ul>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</ion-content>-->
+
+<ion-content class="content content-refreshLife active-refreshLife active-orange" ng-class="{'has-header':hasHeader}">
+    <div class="gift-congra gift-congra02">
+        <a ng-click="showBill()">我的兑换记录</a>
+        <h2>恭喜您！</h2>
+        <p>获得{{data.billCash}}元兑换券</p>
+    </div>
+    <div class="list list-gift list-gift01 list-gift02">
+        <!--<h2>您可以兑换以下商品</h2>-->
+        <h2>仅限当日兑换,请尽快使用</h2>
+        <div class="gifts">
+            <a href="" class="item" ng-repeat="card in cardList" ng-click="chooseGift(card)">
+                <i class="{{card.icon}}"></i>
+                <p class="title"><span>{{card.name}}{{data.billCash}}元</span></p>
+            </a>
+        </div>
+    </div>
+    <div class="gift-congra gift-congra-img">
+    </div>
+    <div class="gift-notes gift-notes02" ng-click="showDesc()">
+        <p class="tc">
+            <span>--------</span>
+            <span>活动说明</span>
+            <span>--------</span>
+            <!--<i class="arrow arrow-down"></i>-->
+        </p>
+    </div>
+    <div class="gift-notes gift-notes02" ng-show="data.isShowDesc" style="height:300px;">
+        <ul>
+            <li>1.本次活动提供包括京东，天猫，1号店，唯品会，亚马逊等五种电子券以及话费充值，其中电子券可在相应网站购买对应商品，具体范围详询官方网站。</li>
+            <li>2.话费可实时充值，支持三大话费运营商。</li>
+            <li>3.一切有关礼品可能产生的纠纷，均由礼品供应商负责。持卡人可发送邮件至service_feihan@163.com 咨询，由礼品供应商协助持卡人解决。</li>
+            <li>4.客服电话：<a href="tel:025-69828520" style="text-decoration:none;"><span>025-69828520</span></a></li>
+            <li><a class="tip-service" href="http://kefu.easemob.com/webim/im.html?tenantId=12358"><i></i>在线客服</a></li>
+        </ul>
+    </div>
+</ion-content>
+<div class="modal-backdrop modal-backdrop01 modal-backdrop-activOrange" ng-show="isGift">
+    <div class="modal-custom">
+        <div class="modal-header" ng-click="hideConfirm()">
+            <a class="modal-close"></a>
+        </div>
+        <div class="modal-body">
+            <p class="tip">确定是否兑换？</p>
+        </div>
+        <div class="modal-footer">
+            <div class="row row-no-padding">
+                <div class="col">
+                    <button class="button button-block button-success" type="button" ng-click="getGiftCard()" ng-disabled="data.isSub">立即兑换</button>
+                </div>
+                <div class="col">
+                    <button class="button button-block button-success" type="button" ng-click="hideConfirm()">再看看</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-backdrop modal-backdrop01 modal-backdrop-activOrange" ng-show="isPhone">
+    <div class="modal-custom modal-custom01 modal-custom-tip" style="padding: 12px 5px;">
+        <div class="modal-header">
+            <a class="modal-close" ng-click="hideConfirm()"></a>
+        </div>
+        <div class="modal-body">
+            <ul class="activ-form activ-form03">
+                <input class="activ-btn" type="tel" placeholder="请输入手机号码" ng-model="data.gameCount">
+            </ul>
+            <p class="tip">家庭网副号、托收号码、携号转网的号码不支持充值，请使用其他号码充值</p>
+
+        </div>
+        <div class="modal-footer">
+            <div class="row row-no-padding">
+                <button class="button button-block button-success" type="button" ng-click="takePhoneOrder()" ng-disabled="errorData.isSub">确认充值</button>
+            </div>
+        </div>
+    </div>
+</div>

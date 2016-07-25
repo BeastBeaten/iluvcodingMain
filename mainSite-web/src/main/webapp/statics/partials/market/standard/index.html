@@ -1,0 +1,122 @@
+<ion-content class="content content-activity" style="height:900px;">
+    <div class="activ-n">
+        <img src="http://pic.ofpay.com/cards/standard/img/lottery-bg.jpg" alt="抽奖">
+        <a class="lottery-bg-btn" ui-sref="rule">规则</a>
+    </div>
+    <div class="activ-title">
+        <div class="list list01">
+            <a class="item item-avatar">
+                <img src="http://pic.ofcard.com/cards/standard/img/lottery-title01.png">
+                <h2>先充值：点击下方按键，充值任意金额话费！</h2>
+            </a>
+        </div>
+        <img class="btn" src="http://pic.ofcard.com/cards/standard/img/lottery-btn.png" ng-click="goRecharge()">
+        <div class="list list02">
+            <a class="item item-avatar">
+                <img src="http://pic.ofcard.com/cards/standard/img/lottery-title02.png">
+                <h2>再抽奖：100%中奖，实物礼品，流量礼券任你拿！</h2>
+            </a>
+        </div>
+        <a class="button-activ01" ng-click="prize()">我的奖品</a>
+    </div>
+    <div class="lottery-bg">
+        <img src="http://pic.ofcard.com/cards/standard/img/lottery-bgd.png">
+        <!--<a class="lettery-btn"></a>-->
+        <div id="lottery" class="lottery-con">
+            <table>
+                <tbody>
+                <tr style="height: 103.125px;">
+                    <td class="lottery-unit lottery-unit-0" style="height: 103.125px;">
+                        <img class="{{prizes[0].icon}}" src="{{prizes[0].pic}}">
+                        <p>{{prizes[0].name}}</p>
+                    </td>
+                    <td class="lottery-unit lottery-unit-1" style="height: 103.125px;">
+                        <img class="{{prizes[1].icon}}" src="{{prizes[1].pic}}">
+                        <p>{{prizes[1].name}}</p>
+                    </td>
+                    <td class="lottery-unit lottery-unit-2" style="height: 103.125px;">
+                        <img class="{{prizes[2].icon}}" src="{{prizes[2].pic}}">
+                        <p>{{prizes[2].name}}</p>
+                    </td>
+                </tr>
+                <tr style="height: 103.125px;">
+                    <td class="lottery-unit lottery-unit-9" style="height: 103.125px;">
+                        <img class="{{prizes[3].icon}}" src="{{prizes[3].pic}}">
+                        <p>{{prizes[3].name}}</p>
+                    </td>
+                    <td style="height: 103.125px;" ng-click="getPrize()"><a style="height: 103.125px; width: 102px;"></a></td>
+                    <td class="lottery-unit lottery-unit-3" style="height: 103.125px;">
+                        <img class="{{prizes[4].icon}}" src="{{prizes[4].pic}}">
+                        <p>{{prizes[4].name}}</p>
+                    </td>
+                </tr>
+                <tr style="height: 103.125px;">
+                    <td class="lottery-unit lottery-unit-8" style="height: 103.125px;">
+                        <img class="{{prizes[5].icon}}" src="{{prizes[5].pic}}">
+                        <p>{{prizes[5].name}}</p>
+                    </td>
+                    <td style="height: 103.125px;" ng-click="getPrize()"><a style="height: 103.125px; width: 102px;"></a></td>
+                    <td class="lottery-unit lottery-unit-4" style="height: 103.125px;">
+                        <img class="{{prizes[6].icon}}" src="{{prizes[6].pic}}">
+                        <p>{{prizes[6].name}}</p>
+                    </td>
+                </tr>
+                <tr style="height: 103.125px;">
+                    <td class="lottery-unit lottery-unit-7" style="height: 103.125px;">
+                        <img class="{{prizes[7].icon}}" src="{{prizes[7].pic}}">
+                        <p>{{prizes[7].name}}</p>
+                    </td>
+                    <td class="lottery-unit lottery-unit-6" style="height: 103.125px;">
+                        <img class="{{prizes[8].icon}}" src="{{prizes[8].pic}}">
+                        <p>{{prizes[8].name}}</p>
+                    </td>
+                    <td class="lottery-unit lottery-unit-5" style="height: 103.125px;">
+                        <img class="{{prizes[9].icon}}" src="{{prizes[9].pic}}">
+                        <p>{{prizes[9].name}}</p>
+                    </td>
+                </tr>
+                </tbody></table>
+        </div>
+    </div>
+
+</ion-content>
+<div class="modal-backdrop" ng-show="'END' == result">
+    <div class="modal-custom modal-custom-activ">
+        <div class="modal-header" ng-click="hideEND()">
+            <i class="close"></i>
+        </div>
+        <div class="modal-body">
+            <p class="tip">活动已结束，下次再来吧</p>
+        </div>
+        <div class="modal-footer">
+            <div class="row row-no-padding">
+                <button class="button button-block button-full" type="button" ng-click="hideEND()">确认</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-backdrop" ng-show="data.isNotLogin">
+    <div class="modal-custom modal-custom-activ">
+        <div class="modal-header" ng-click="cancel()">
+            <i class="close"></i>
+        </div>
+        <div class="modal-body">
+            <div class="list">
+                <label>
+                    <input type="tel" placeholder="请输入您的手机号码" id="telPho" ng-model="data.mobileNo" ng-change="checkTelPho('3')" ng-focus="checkTelPho('1')" ng-blur="checkTelPho('2')">
+                </label>
+            </div>
+            <div class="row">
+                <label>
+                    <input type="tel" placeholder="请输入验证码" id="verifyCode" ng-model="data.verifyCode" ng-change="checkCode('3')" ng-foucs="checkCode('1')" ng-blur="checkCode('2')">
+                </label>
+                <button class="button button-small" type="button" ng-click="getIdenCode()">{{idenCodeData.title}}</button>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="row row-no-padding">
+                <button class="button button-block button-full" ng-click="login()">确认</button>
+            </div>
+        </div>
+    </div>
+</div>

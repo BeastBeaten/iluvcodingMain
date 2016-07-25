@@ -1,0 +1,42 @@
+<div class="bar bar-header bar-positive">
+   <!-- <button class="button button-icon icon ion-ios7-arrow-back" onclick="history.back()"></button>  -->
+    <h1 class="title">会员直充</h1>
+</div>
+
+<ion-content class="content content-01 has-header padding">
+    <!--要有返回标题，用上面注释的代码-->
+    <p class="hot-game">热门会员</p>
+    <div class="recharge-p-list">
+        <div class="list-hot-game clearfix">
+            <a ui-sref="vipcharge({'gamename':'Q币充值'})" class="item"><i class="game-01 add-game"></i>Q币充值</a>
+            <a ui-sref="vipcharge({'gamename':'QQ会员'})" class="item"><i class="game-02 add-game"></i>QQ会员</a>
+            <a ui-sref="vipcharge({'gamename':'QQ超级会员'})" class="item"><i class="game-03 add-game"></i>QQ超级会员</a>
+            <a ui-sref="vipcharge({'gamename':'QQ贵族钻'})" class="item"><i class="game-04 add-game"></i>QQ贵族钻</a>
+            <a ui-sref="vipkamicharge({'gamename':'爱奇艺黄金会员'})" class="item"><i class="game-08"></i>爱奇艺黄金会员</a>
+            <a ui-sref="vipcharge({'gamename':'优酷土豆黄金会员'})" class="item"><i class="game-07"></i>优酷土豆黄金会员</a>
+            <a ui-sref="vipcharge({'gamename':'好莱坞会员'})" class="item"><i class="game-13"></i>好莱坞影院</a>
+            <a ui-sref="vipcharge({'gamename':'乐视会员'})" class="item"><i class="game-12"></i>乐视会员</a>
+            <a ui-sref="vipcharge({'gamename':'搜狐黄金会员'})" class="item"><i class="game-11"></i>搜狐黄金会员</a>
+            <a ui-sref="vipcharge({'gamename':'迅雷会员'})" class="item"><i class="game-10"></i>迅雷会员</a>
+            <a ui-sref="vipcharge({'gamename':'新浪微博会员'})" class="item"><i class="game-06"></i>新浪微博</a>
+            <a ui-sref="vipcharge({'gamename':'YY会员'})" class="item"><i class="game-14"></i>YY会员</a>
+</div>
+    </div>
+
+    <div class="list list-search-pop">
+        <a ui-sref="viplist" class="item item-icon-right">
+            选择其他会员充值
+            <i class="icon ion-ios7-arrow-right"></i>
+        </a>
+    </div>
+
+    <div class="copyright">
+        <p class="link">
+            <a ng-click="login()"><span ng-bind="userData.loginTitle"></span> <span ng-bind="userData.loginOut"></span></a>
+            ｜
+            <a ui-sref="order-query({type:'remote'})"><i></i>订单查询</a>
+            ｜
+            <a ui-sref="recharge-desc"><i></i>充值说明</a>
+        </p>
+    </div>
+</ion-content>

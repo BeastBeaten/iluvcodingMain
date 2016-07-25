@@ -1,0 +1,78 @@
+<div class="bar bar-header bar-positive">
+    <button class="button button-icon icon ion-ios7-arrow-back" ui-sref="viprecharge"></button>
+    <h1 class="title">会员充值</h1>
+</div>
+<div class="tabs-striped tabs-top tabs-order">
+    <div class="tabs">
+        <a class="tab-item" ng-class="{'active':'1' == data.queryFlag}" href="" ng-click="changeOrderType('success','success','1')"><span>已完成</span></a>
+        <a class="tab-item" ng-class="{'active':'0' == data.queryFlag}" href="" ng-click="changeOrderType('fail','fail','0')"><span>待支付</span></a>
+        <a class="tab-item" ng-class="{'active':'9' == data.queryFlag}" href="" ng-click="changeOrderType('success','cancel','9')"><span>撤销</span></a>
+    </div>
+</div>
+<ion-content class="content content-01 content-position content-position-02" style="position: absolute;">
+    <div class="list list-account list-border" ng-if="'remote' == data.queryType">
+        <label class="item item-select item-icon-right">
+            账单月份
+            <select class="select-orig" ng-model="data.startMonth" ng-change="chooseTime(data.startMonth)">
+                <option  ng-repeat="date in dateList" value="{{date.month}}" ng-selected="data.startMonth == date.month">{{date.year}}年{{date.month+1}}月</option>
+            </select>
+            <a class="ion-right">
+                <i class="icon ion-ios7-arrow-down"></i>
+            </a>
+        </label>
+    </div>
+    <div class="coupons" ng-if="0 == orderList.length">
+        <div class="coupons-item">
+            <div class="body-top">
+                <div class="body-bg"><i></i></div>
+                <!--<h2>50<span>元</span></h2>-->
+                <p class="tip-sorry">抱歉，暂未查到相关订单</p>
+            </div>
+        </div>
+    </div>
+    <div class="coupons" ng-if="0 < orderList.length" ng-repeat="order in orderList">
+        <div class="coupons-item">
+            <div class="body-top">
+                <div class="body-bg"><i></i></div>
+                <dl>
+                    <dd>
+                        <h2 ng-show="'' != order.facePric">{{order.facePric}}<span>元</span></h2>
+                        <p><span ng-bind="getCardName(order.cardName)"></span></p>
+                    </dd>
+                    <dt>
+                    <p>{{order.gameCount}}</p>
+                    <p>{{order.billId}}</p>
+                    <p>购买数量: {{order.cardNum}}</p>
+                    <p>{{order.orderTime}}</p>
+                    </dt>
+                </dl>
+
+            </div>
+            <div class="body-bottom" ng-if="'1' == data.queryFlag">
+                <!--<p>优惠：0.2元</p>-->
+                <p>实付：<span>{{order.cash}}元</span></p>
+                <!--绿色按钮加activ-btn-ed02-->
+                <!--<p class="p-fr">支付成功</p>-->
+                <button class="activ-btn activ-btn-ed02">支付成功</button>
+            </div>
+            <div class="body-bottom" ng-if="'0' == data.queryFlag">
+                <!--<p>优惠：0.2元</p>-->
+                <p>应付：<span>{{order.cash}}元</span></p>
+                <!--蓝色按钮多加 activ-btn-ing-->
+                <button class="activ-btn activ-btn-ing" type="button" ng-if="'0' == order.already" ng-click="goPay(order.billId,order.cardName)">去支付</button>
+            </div>
+            <div class="body-bottom" ng-if="'9' == data.queryFlag">
+                <!--<p>优惠：0.2元</p>-->
+                <p>实付：<span>{{order.cash}}元</span></p>
+                <p class="p-grey">退款将在3-7个工作日内返还到原账户</p>
+                <button class="activ-btn">撤销</button>
+            </div>
+        </div>
+    </div>
+    <div class="coupons-notice coupons-notice-ing">
+        <a class="tip-service" href="http://kefu.easemob.com/webim/im.html?tenantId=12358"><i></i>在线客服</a>
+    </div>
+    <div class="coupons-notice" ng-if="'remote' == data.queryType && 0 != orderList.length" ng-click="loadMore()">
+        <p><i></i>点击加载更多</p>
+    </div>
+</ion-content>

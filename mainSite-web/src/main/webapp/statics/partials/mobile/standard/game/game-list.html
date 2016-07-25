@@ -1,0 +1,66 @@
+<div class="bar bar-header item-input-inset item-input-inset-auto">
+    <label class="item-input-wrapper">
+        <i class="icon ion-ios7-search placeholder-icon"></i>
+        <input id="search" type="text" placeholder="请输入游戏名称检索" ng-model="data.search" ng-focus="clearSearch('1')" ng-blur="clearSearch('2')">
+    </label>
+    <i class="icon-close-01" ng-click="clearSearch('3')"></i>
+</div>
+<ion-content class="content content-01 body-white has-header">
+        <!--.body-white方便开发不改body样色，内容部分为白色-->
+        <!--<div class="list item-search">
+            <div class="item item-search recharge-input">
+                <!--<span><i></i>请输入游戏名称检索</span>-->
+        <!--<i></i>
+        <input placeholder="请输入游戏名称检索"/>
+        <i class=" icon-close-01"></i>
+    </div>
+</div>-->
+    <div class="list bB1 mt1" ng-if="''!= data.search">
+
+        <a ui-sref="gamecharge({'gamename':game.name})" class="item item-list" ng-repeat="game in gameList|filter:{name:data.search}">
+            {{game.name}}
+        </a>
+    </div>
+    <div class="list bB1 mt1" ng-if="'' == data.search">
+        <div class="item item-divider item-divider-small item-divider01 bT0" ng-if="''!=rechargeGameList">
+            最近充值过的游戏
+        </div>
+        <a ui-sref="gamecharge({'gamename':game})" class="item item-list" ng-repeat="game in rechargeGameList">
+            {{game}}
+        </a>
+        <a class="item item-divider item-divider01 item-divider-small item-divider-clear bB1">
+            热门游戏
+        </a>
+        <a ui-sref="gamecharge({'gamename':'英雄联盟'})" class="item item-list">
+            英雄联盟
+        </a>
+        <a ui-sref="gamecharge({'gamename':'魔兽世界'})" class="item item-list">
+            魔兽世界
+        </a>
+        <a ui-sref="gamecharge({'gamename':'穿越火线'})" class="item item-list">
+            穿越火线
+        </a>
+        <a ui-sref="gamecharge({'gamename':'4399一卡通'})" class="item item-list">
+            4399一卡通
+        </a>
+        <a ui-sref="gamecharge({'gamename':'地下城与勇士'})" class="item item-list">
+            地下城与勇士
+        </a>
+        <a ui-sref="gamecharge({'gamename':'天龙八部3'})" class="item item-list">
+            天龙八部3
+        </a>
+        <a href="" class="item item-divider item-divider01 item-divider-small">
+            按字母检索
+        </a>
+        <a name="{{letter.name}}" class="item item-list" ng-repeat="letter in letters">
+            <h2 class="">{{letter.name}}</h2>
+            <div ng-repeat="game in gameList|filter:{firstPinyin:letter.name}" ng-click="goCharge(game.name)">{{game.name}}</div>
+        </a>
+    </div>
+
+</ion-content>
+<!--<div class="bar list-a" ng-if="'' == data.search">-->
+    <!--<ul>-->
+        <!--<li ng-repeat="letter in letters"><a href="">{{letter.name}}</a></li>-->
+    <!--</ul>-->
+<!--</div>-->

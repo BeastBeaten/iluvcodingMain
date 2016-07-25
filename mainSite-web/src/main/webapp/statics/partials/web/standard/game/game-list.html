@@ -1,0 +1,75 @@
+
+<div class="title clearfix">
+    <a class="fr" ui-sref="gameOrderSearch">订单中心</a>
+    <h2>游戏充值，1-5分钟到账</h2>
+</div>
+<div class="content">
+    <div class="subTitle">{{data.gameName}}</div>
+    <form class="orderForm orderDetail" ng-show="''!=gameItemList">
+        <ul class="formList">
+            <li class="clearfix">
+                <span class="label">商品名称：</span>
+                <span ng-repeat="gameItem in gameItemList">
+                    <input name="proName" ng-checked="$index == 0" type="radio">
+                    <label class="grey">{{gameItem.name}}</label>
+                </span>
+            </li>
+            <li>
+                <span class="label">选择面值：</span>
+                <a class="tag" href="javascript:void(0)" ng-repeat="faceValue in faceValueList|orderBy:'parValue'" ng-class="{tagChecked:faceValue.choosed,mt10:$index > 3,ml95:$index > 3 && $index % 4 == 0}" ng-click = "chooseFaceValue(faceValue.cardId)">{{faceValue.faceName}}</a>
+            </li>
+            <li class="clearfix">
+                <span class="label">购买数量：</span>
+                <input class="inputTxt input-50p" type="text" ng-keyup="checkCardNum('1')" ng-blur="checkCardNum('2')" ng-model="data.cardNum" ng-disabled="''==data.cardId">
+                <span class="grey range">可购买范围：{{data.purNum}}</span>
+            </li>
+
+            <!-- 输入框输入内容后去掉placeholder样式-->
+            <li class="clearfix" ng-show="data.isBattleAccount">
+                <span class="label">通行证帐号：</span>
+                <input class="inputTxt num" name="enter" type="text" placeholder="请输入通行证账号(邮箱)" ng-model="data.battleAccount" ng-trim="trues" ng-keyup="checkBattleAccount('1')" ng-blur="checkBattleAccount('2')">
+                <div class="error" ng-show="'' != errorData.battleMsg">{{errorData.battleMsg}}</div>
+            </li>
+            <li class="phoneInfo" ng-show="game.isBattleAccount">
+                <span class="label">&nbsp;</span><span class="orange">{{data.battleAccount}}</span>
+            </li>
+            <li class="clearfix" style="padding:0;" ng-show="data.isBattleAccount">
+                <span class="label">&nbsp;</span>
+              <input id="only" type="checkbox" value = "1" ng-model="data.chooseBattleAccount" ng-click="makeOnly()"> 该帐号下面只有一个“魔兽帐号”
+            </li>
+            <li class="tip clearfix" ng-show="!game.chooseBattleAccount">
+                <span class="label">游戏账号：</span><input class="inputTxt num placeholder" ng-trim="true" ng-model="data.gameCount" placeholder="请输入游戏账号" type="text" ng-blur="checkGameAccount()">
+            </li>
+            <li class="phoneInfo only">
+                <span class="label">&nbsp;</span><span class="orange">{{data.gameCount}}</span>
+            </li>
+            <li class="clearfix" ng-show="'' != gameArea">
+                <span class="label">游戏区：</span>
+                <select class="grey-dark inputTxt selects" ng-model = "data.gameArea" ng-options="area.areaName as area.areaName for area in gameArea" ng-change="chooseArea()">
+                    <option value = "">请选择游戏区</option>
+                </select>
+            </li>
+            <li class="clearfix" ng-show="null != gameArea && '' != gameArea && '' != gameServer">
+                <span class="label">游戏服务器：</span>
+                <select class="grey-dark inputTxt selects" ng-model = "data.gameServer" ng-options="server.areaService as server.areaService for server in gameServer" ng-change="chooseServer()">
+                    <option value = "">请选择游戏服务器</option>
+                </select>
+            </li>
+
+
+            <li class="clearfix">
+                <span class="label">售价：</span>
+                <em class="orange" style="font-size: 24px;">{{data.cash}}</em> 元
+            </li>
+            <!-- 提交表单报错，按钮置灰调用btnDisabled,报错信息><span class="fail">库存不足，兑换失败！</span> -->
+            <li><span class="label">&nbsp;</span>
+                <input class="btn" value="立即购买" ng-class="{btnDisabled:''!=errorData.errorMsg || ''!= errorData.battleMsg}" type="button" ng-click="submit()">
+                <span class="fail" ng-show="''!=errorData.errorMsg">{{errorData.errorMsg}}</span>
+            </li>
+        </ul>
+    </form>
+    <div class="fail" ng-show="''==gameItemList" style="text-align: center;height: 120px;">
+        {{errorData.errorMsg}}
+    </div>
+</div>
+

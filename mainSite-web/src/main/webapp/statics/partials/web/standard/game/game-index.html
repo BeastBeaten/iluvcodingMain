@@ -1,0 +1,30 @@
+<div class="title clearfix">
+    <a class="fr" ui-sref="gameOrderSearch">订单中心</a>
+    <h2>游戏充值，1-5分钟到账</h2>
+</div>
+<div class="content">
+<div class="game">
+<ul class="tab clearfix">
+    <li ng-repeat="letter in lettersList" ng-class="{cur:letter.choosed,hot:$index == 0}"><a ng-click="chooseLetter(letter.name)">{{letter.name}}</a></li>
+</ul>
+<div class="block">
+<div class="gameHot" ng-show="data.showHotGame">
+    <ul class="clearfix">
+        <li ng-repeat="hotGame in hotGameList">
+            <a href="javascript:void (0)" ng-click="goBuy(hotGame.name)"><img ng-src="{{hotGame.logo}}" alt="{{hotGame.name}}"></a>
+            <a href="javascript:void (0)" ng-click="goBuy(hotGame.name)">{{hotGame.name}}</a>
+        </li>
+    </ul>
+</div>
+<div ng-show="!data.showHotGame" class="gameList">
+    <ul class="clearfix">
+        <li ng-repeat="game in allGameList|filter:{firstPinyin:data.gameFilter}">
+            <a href="javascript:void (0)" ng-click="goBuy(game.name)" ng-class="{bgyellow:($index+1)%8==1,bgblue:($index+1)%8==2,bgorange:($index+1)%8==3,bgpurple:($index+1)%8==4,bgred:($index+1)%8==5,bggreen:($index+1)%8==6,bglightblue:($index+1)%8==7,bgrose:($index+1)%8==0}">{{game.name}}</a>
+        </li>
+
+    </ul>
+</div>
+
+</div>
+</div>
+</div>

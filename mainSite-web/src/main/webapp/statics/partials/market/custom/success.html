@@ -1,0 +1,22 @@
+<ion-content class="content content-activity content-activity-AgriculturalBank content-activity-AgriculturalBank02">
+    <div class="activ-n">
+        <img class="logo-AB" src="http://pic.ofpay.com/cards/standard/img/logo-AB.png">
+        <img src="http://pic.ofpay.com/cards/standard/img/activity-AB02/lottery-bg-AB-prize-green.png" alt="抽奖">
+    </div>
+    <div class="activ-con padding0">
+        <div class="activ-prize">
+            <img src="http://pic.ofpay.com/cards/standard/img/activity-AB02/lottery-price-AB-green.png" alt="中奖">
+            <p class="prize prize01">话费{{billInfo.cash * 2}}元</p>
+            <p class="prize">五折优惠券</p>
+        </div>
+        <h2>赢取好礼，一触即发！</h2>
+        <p>优惠券已经放入账户：{{mobileNo}}</p>
+        <!--<p class="mb30">此优惠券限当日使用，快去充值吧！</p>-->
+        <div class="mlr20"><a class="btn" href="/mobile/mobilecommon/abc?menu=phonerecharge&rechargeAccount={{mobileNo}}&faceValue={{billInfo.cash * 2}}#/phonerecharge">立即充值</a></div>
+        <p class="tip">本券适用于全国话费充值</p>
+    </div>
+</ion-content>
+<div class="view mask" ng-if="isShare">
+    <img src="http://pic.ofpay.com/cards/standard/img/share.png" class="share" alt="点击这里分享红包">
+    <a class="btn" ng-click="hideShare()"><img src="http://pic.ofpay.com/cards/standard/img/btn-icon.png" alt="知道了"></a>
+</div>

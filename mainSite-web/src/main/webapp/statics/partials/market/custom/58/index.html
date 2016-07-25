@@ -1,0 +1,62 @@
+
+<div class="content">
+    <div class="slider">
+        <ul class="slider-slides">
+            <li class="slider-slide slider-slide-image"><img src="http://pic.ofcard.com/cards/standard/img/banner01.png" alt=""></li>
+            <li class="slider-slide slider-slide-image"><img src="http://pic.ofcard.com/cards/standard/img/banner02.png" alt=""></li>
+
+        </ul>
+    </div>
+    <div class="coupon clearfix">
+        <h1><a ng-click="getMarketBill()"><i class="my_coupon"></i>我的优惠券</a></h1>
+        <ul class="coupon_item clear"  ng-repeat="marketInfo in marketBills">
+            <li  ng-class="{'coupon1':'1'==marketInfo.class,'coupon2':'2'==marketInfo.class,'coupon3':'3'==marketInfo.class,'coupon4':'4'==marketInfo.class}" class="coupon_all">
+                <h2><span ng-bind="marketInfo.categoryName"></span></h2>
+                <div class="coupon_con">
+                    <p class="cou_list1">
+                        <span class="coupon_title">七月优惠专享</span><span class="coupon_leave" ng-class="{'green': '1'==maketInfo.class,'blue':'2'==marketInfo.class,'red':'3'==marketInfo.class,'orange':'4'==marketInfo.class}">剩余: <em><span ng-bind="marketInfo.leftNum"></span> 张</em></span>
+                    </p>
+                    <p class="dyq" ng-class="{'green':'1'==marketInfo.class,'blue':'2'==marketInfo.class,'red':'3'==marketInfo.class,'orange':'4'==marketInfo.class}"><span ng-bind="marketInfo.marketDesc"></span></p>
+                    <p class="coupon_tips" ng-class="{'green':'1'==marketInfo.class,'blue':'2'==marketInfo.class,'red':'3'==marketInfo.class,'orange':'4'==marketInfo.class}">
+                        <span ng-bind="marketInfo.desc"></span><span></span>
+                    </p>
+                </div>
+                <button  class="qiang" ng-show="'0'!=marketInfo.leftNum && !marketInfo.alreadyGet" ng-click="addMarketBill(marketInfo)" >
+                </button>
+                <button  class="qiang no-left" ng-show="'0'==marketInfo.leftNum || marketInfo.alreadyGet">
+                </button>
+            </li>
+            <!-- <li class="coupon2 coupon_all">
+               <h2>流量券</h2>
+               <div class="coupon_con">
+                 <p class="cou_list1">
+                   <span class="coupon_title">618电商节专享</span><span class="coupon_leave blue">剩余: <em>30 张</em></span>
+                 </p>
+                 <p class="dyq blue">中国移动流量5元抵用券</p>
+                 <p class="coupon_tips blue">
+                   <span>限购买500M产品时使用</span><span>有效期 2016-06-30</span>
+                 </p>
+               </div>
+               <a class="qiang" href="#" target="_blank">
+
+               </a>
+             </li>
+             <li class="coupon3 coupon_all">
+               <h2>流量券</h2>
+               <div class="coupon_con">
+                 <p class="cou_list1">
+                   <span class="coupon_title">618电商节专享</span><span class="coupon_leave red">剩余: <em class="leave_orange">30 张</em></span>
+                 </p>
+                 <p class="dyq red">中国移动流量4元抵用券</p>
+                 <p class="coupon_tips red">
+                   <span>限购买150M产品时使用</span><span>有效期 2016-06-30</span>
+                 </p>
+               </div>
+               <a class="qiang" href="#" target="_blank">
+
+               </a>
+             </li>  -->
+        </ul>
+    </div>
+
+</div>

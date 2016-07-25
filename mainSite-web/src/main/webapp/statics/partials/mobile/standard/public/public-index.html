@@ -1,0 +1,78 @@
+<ion-content class="content content-01">
+    <div class="content content-02 content-position pt5 body-white dif-content">
+        <div nj-click="chooseCity()" class="list list-inset list-local">
+            <p><i></i><a href="" ng-click="chooseCity()">{{data.city}}</a></p>
+        </div>
+
+        <div class="row row-conve">
+
+            <div class="col">
+                <a href="" class="icon-conve" ng-class="{active:data.projectTypeId=='c2670'}"
+                   ng-click="chooseProjectType('c2670')">
+                    <i class="water"></i><span>水</span></a>
+            </div>
+            <div class="col">
+                <a href="" class="icon-conve" ng-class="{active:data.projectTypeId=='c2680'}"
+                   ng-click="chooseProjectType('c2680')">
+                    <i class="elec"></i><span>电</span></a>
+            </div>
+            <div class="col">
+                <a href="" class="icon-conve" ng-class="{active:data.projectTypeId=='c2681'}"
+                   ng-click="chooseProjectType('c2681')">
+                    <i class="coal"></i><span>煤</span></a>
+            </div>
+        </div>
+        <div class="list list-inset">
+            <div class="item recharge-input recharge-input01">
+                <input type="tel" id="gameCount" ng-model="data.gameCount"
+                       ng-change="checkPublicNo('1')" ng-focus="clearError('1')" ng-blur="clearError('2')"
+                       placeholder="请输入户号">
+                <i class="icon-close-01 icon-close icon-close-02" ng-show="'' != data.gameCount" ng-click="clearError('3')"></i>
+                <i class="icon-close-01 icon-clock" ng-show="'' == data.gameCount" ng-click="showCookie()"></i>
+            </div>
+            <div class="item recharge-input-p dif-bor" ng-show="!data.hasCookie && data.showCookie">
+                <p class="item-note-center pt15">没有最近的充值记录</p>
+            </div>
+            <div class="item recharge-input-p recharge-record" ng-show="data.hasCookie && data.showCookie">
+                <div ng-repeat="publicNo in publicNoes|filter:data.gameCount">
+                    <p class="item-note-center item-note-p" ng-click="choosePublicNo(publicNo)">{{publicNo}}</p>
+                </div>
+                <a href="#" class="item-note-center" ng-click="clearCookie()">清空历史记录</a>
+            </div>
+            <p class="error" ng-show="''!=errorData.errorMsg"><span ng-bind="errorData.errorMsg"/></p>
+            <label class="item item-select item-icon-right item-select02">
+                <select class="select-orig" ng-model="data.selectedPayUnit"
+                        ng-change="choosePublicUnit(data.selectedPayUnit.payUnitId, data.selectedPayUnit.payUnitName)"
+                        ng-options="payUnit.payUnitName for payUnit in publicData.payUnitList">
+                </select>
+
+                <a class="ion-right">
+                    <i class="icon ion-ios7-arrow-down"></i>
+                </a>
+            </label>
+            <p class="pop-tip pop-tip01"
+               ng-show="''!=errorData.areaMsg && ''==errorData.cityMsg">抱歉暂不支持该地区{{errorData.areaMsg}}</p>
+            <button class="button button-block button-positive button-spacing mt45"
+                    ng-click="queryPublicBill($event)">查询</button>
+        </div>
+
+        <div id="copyright"></div>
+    </div>
+</ion-content>
+<div class="modal-backdrop" ng-show="''!=errorData.cityMsg">
+    <div class="modal-custom">
+        <div class="modal-body">
+            <p class="tip">当前定位的城市是{{errorData.cityMsg}}，是否切换？</p>
+        </div>
+        <div class="modal-footer">
+            <div class="row row-no-padding">
+                <div class="col">
+                    <button class="button button-block button-fail" ng-click="notChangeCity()">否</button>
+                </div>
+                <div class="col">
+                    <button class="button button-block button-sucess" ng-click="doChangeCity()">是</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

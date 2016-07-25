@@ -1,0 +1,40 @@
+<div class="bar bar-header bar-positive bar-refreshLife" ng-show="hasHeader">
+    <button class="button button-icon icon ion-ios7-arrow-back" onclick="window.history.go(-1);">返回</button>
+</div>
+<ion-content class="content activ-tip-bg active-refreshLife active-green" ng-class="{'has-header':hasHeader}">
+    <div class="activ-n activ-n02">
+        <img src="http://pic.ofcard.com/cards/youzheng/img/activity-theme-green01.jpg" alt="">
+    </div>
+    <form action="">
+        <ul class="activ-form activ-form02">
+            <!--<div class="logo-activity">-->
+                <!--<i class="logo-activity"></i>-->
+
+            <!--</div>-->
+            <div class="logo-activity">
+
+                <i class="icon-clock"></i>
+                <h2>本期活动已结束，敬请下期参与。</h2>
+                <a ng-show="'AE' == result" ui-sref="giftcheck">历史记录</a>
+            </div>
+        </ul>
+    </form>
+    <div class="gift-notes gift-notes02" style="margin-top:90px;" ng-click="showDesc()">
+    <p class="title-line">
+        <span></span>
+        <span>活动说明</span>
+        <span></span>
+        <!--<i class="arrow arrow-down"></i>-->
+    </p>
+</div>
+    <div  class="gift-notes gift-notes02">
+        <ul>
+            <li>1、活动时间：<span>2016</span>年<span>1</span>月-<span>2016</span>年<span>7</span>月。</li>
+            <li>2、活动对象：<span>江苏邮储银行电子银行客户</span>。</li>
+            <li>3、活动内容：活动期间，客户在任意自然月内通过网银、手机银行办理百元以上的账务类交易达到<span>3笔</span>及以上，可于次月登陆我行微信公众号领取<span>精美礼品1份</span>。</li>
+            <li>4、活动流程：客户当月达到兑奖条件后，<span>次月20日12：00至25日24：00</span>起可登陆“邮储银行江苏分行”微信公众号兑奖专区，输入在我行预留的手机号码，通过系统验证符合条件后即可抢兑精美礼品一份，同一客户每月限兑换一份礼品。活动礼品为<span>30元</span>手机<span>话费</span>或主流知名<span>电商礼品卡</span>，<span>每月23500份</span>，兑完即止。当月取得获奖资格不影响次月继续获奖。本次活动中的电子银行账务类交易指个人网银、手机银行渠道办理的转账、支付、缴费、理财类交易，不含各类绿卡快捷支付交易、退货冲正交易。</li>
+            <li>5、客服电话：<span>025-69828520</span></li>
+        </ul>
+    </div>
+
+</ion-content>

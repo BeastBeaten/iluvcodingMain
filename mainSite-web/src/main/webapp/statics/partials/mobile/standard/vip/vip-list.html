@@ -1,0 +1,43 @@
+<div class="bar bar-header item-input-inset item-input-inset-auto">
+    <label class="item-input-wrapper">
+        <i class="icon ion-ios7-search placeholder-icon"></i>
+        <input id="search" type="text" placeholder="请输入会员名称检索" ng-model="data.search" ng-focus="clearSearch('1')" ng-blur="clearSearch('2')">
+    </label>
+    <i class="icon-close-01" ng-click="clearSearch('3')"></i>
+</div>
+<ion-content class="content content-01 body-white has-header">
+    <div class="list bB1 mt1" ng-if="''!= data.search">
+
+        <a ui-sref="vipcharge({'gamename':game.name})" class="item item-list" ng-repeat="game in vipList|filter:{name:data.search}">
+            {{game.name}}
+        </a>
+    </div>
+    <div class="list bB1 mt1" ng-if="'' == data.search">
+        <div class="item item-divider item-divider-small item-divider01 bT0" ng-if="''!=rechargeVipList">
+            最近充值过的会员
+        </div>
+        <a ui-sref="vipcharge({'gamename':game})" class="item item-list" ng-repeat="game in rechargeVipList">
+            {{game}}
+        </a>
+        <a class="item item-divider item-divider01 item-divider-small item-divider-clear bB1">
+            热门会员
+        </a>
+        <a ui-sref="vipcharge({'gamename':'Q币充值'})" class="item item-list">
+            Q币充值
+        </a>
+        <a ui-sref="vipcharge({'gamename':'QQ会员'})" class="item item-list">
+            QQ会员
+        </a>
+        <a ui-sref="vipcharge({'gamename':'乐视会员'})" class="item item-list">
+            乐视会员
+        </a>
+        <a href="" class="item item-divider item-divider01 item-divider-small">
+            按字母检索
+        </a>
+        <a name="{{letter.name}}" class="item item-list" ng-repeat="letter in letters">
+            <h2 class="">{{letter.name}}</h2>
+            <div ng-repeat="game in vipList|filter:{firstPinyin:letter.name}" ng-click="goCharge(game.name)">{{game.name}}</div>
+        </a>
+    </div>
+
+</ion-content>
