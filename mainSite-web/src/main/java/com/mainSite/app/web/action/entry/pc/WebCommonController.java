@@ -23,8 +23,20 @@ import java.util.Map;
  * @author zhouqing
  */
 @Controller
+@RequestMapping("/web")
 public class WebCommonController extends BaseController{
 
-    //private static Logger logger = LoggerFactory.getLogger(WebCommonController.class);
+    /**
+     * PC端首页入口
+     * @return
+     */
+    @RequestMapping(value = "index/",method = {RequestMethod.GET,RequestMethod.POST})
+    public String webIndex(Model model, HttpServletRequest request,HttpServletResponse response){
+
+        return "web/index";
+
+    }
+
+
 
 }
