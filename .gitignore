@@ -11,4 +11,6 @@
 *.svn
 *.git
 *.idea
+.idea/
 target/
+idea/
