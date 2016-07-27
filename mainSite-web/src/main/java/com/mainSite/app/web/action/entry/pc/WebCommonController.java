@@ -26,11 +26,12 @@ import java.util.Map;
 @RequestMapping("/web")
 public class WebCommonController extends BaseController{
 
+
     /**
      * PC端首页入口
      * @return
      */
-    @RequestMapping(value = "index/",method = {RequestMethod.GET,RequestMethod.POST})
+    @RequestMapping(value = "index",method = {RequestMethod.GET,RequestMethod.POST})
     public String webIndex(Model model, HttpServletRequest request,HttpServletResponse response){
 
         return "web/index";

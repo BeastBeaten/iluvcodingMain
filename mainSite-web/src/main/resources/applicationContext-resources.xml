@@ -35,26 +35,26 @@
         </property>
     </bean>
 
-    <bean name="memcachedClientBuilder" class="net.rubyeye.xmemcached.XMemcachedClientBuilder">
-        <!-- XMemcachedClientBuilder have two arguments.First is server list,and second is weights array. -->
-        <constructor-arg value="${memcached.server.list}"/>
-        <property name="opTimeout" value="${memcached.server.timeout}"/>
-        <property name="connectionPoolSize" value="${memcached.server.poolSize}"></property>
-        <property name="commandFactory">
-            <bean class="net.rubyeye.xmemcached.command.TextCommandFactory"></bean>
-        </property>
-        <property name="sessionLocator">
-            <bean class="net.rubyeye.xmemcached.impl.KetamaMemcachedSessionLocator"></bean>
-        </property>
-        <property name="transcoder">
-            <bean class="net.rubyeye.xmemcached.transcoders.SerializingTranscoder">
-                <property name="compressionThreshold" value="512"/>
-            </bean>
-        </property>
-    </bean>
-    <!-- Use factory bean to build memcached client -->
-    <bean name="memcachedClient" factory-bean="memcachedClientBuilder" factory-method="build"
-          destroy-method="shutdown"/>
+    <!--<bean name="memcachedClientBuilder" class="net.rubyeye.xmemcached.XMemcachedClientBuilder">-->
+        <!--&lt;!&ndash; XMemcachedClientBuilder have two arguments.First is server list,and second is weights array. &ndash;&gt;-->
+        <!--<constructor-arg value="${memcached.server.list}"/>-->
+        <!--<property name="opTimeout" value="${memcached.server.timeout}"/>-->
+        <!--<property name="connectionPoolSize" value="${memcached.server.poolSize}"></property>-->
+        <!--<property name="commandFactory">-->
+            <!--<bean class="net.rubyeye.xmemcached.command.TextCommandFactory"></bean>-->
+        <!--</property>-->
+        <!--<property name="sessionLocator">-->
+            <!--<bean class="net.rubyeye.xmemcached.impl.KetamaMemcachedSessionLocator"></bean>-->
+        <!--</property>-->
+        <!--<property name="transcoder">-->
+            <!--<bean class="net.rubyeye.xmemcached.transcoders.SerializingTranscoder">-->
+                <!--<property name="compressionThreshold" value="512"/>-->
+            <!--</bean>-->
+        <!--</property>-->
+    <!--</bean>-->
+    <!--&lt;!&ndash; Use factory bean to build memcached client &ndash;&gt;-->
+    <!--<bean name="memcachedClient" factory-bean="memcachedClientBuilder" factory-method="build"-->
+          <!--destroy-method="shutdown"/>-->
 
 
 </beans>

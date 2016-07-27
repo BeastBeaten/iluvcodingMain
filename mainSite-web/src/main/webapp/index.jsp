@@ -7,7 +7,7 @@
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../../lib/icon/favicon.ico">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
     <title>Carousel Template for Bootstrap</title>
 
@@ -21,7 +21,7 @@
     <![endif]-->
 
     <!-- Custom styles for this template -->
-    <link href="../../../lib/css/carousel.css" rel="stylesheet">
+    <link href="/css/carousel.css" rel="stylesheet">
 </head>
 <!-- NAVBAR
 ================================================== -->
@@ -205,6 +205,6 @@
 <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="../../../lib/js/assets/e10-viewport-bug-workaround.js"></script>
+<script src="/assets/js/e10-viewport-bug-workaround.js"></script>
 </body>
 </html>
