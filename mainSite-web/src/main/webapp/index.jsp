@@ -19,11 +19,11 @@
     <link href="http://iluvcoding-pic.oss-cn-hangzhou.aliyuncs.com/iluvcodingMain/css/carousel.css" rel="stylesheet">
 </head>
 
-<body>
+<body style="padding-top:50px">
 <div class="navbar-wrapper">
     <div class="container">
 
-        <nav class="navbar navbar-inverse navbar-static-top">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -69,36 +69,39 @@
     </ol>
     <div class="carousel-inner" role="listbox">
         <div class="item active">
-            <img class="first-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="First slide">
+            <img class="first-slide" src="http://iluvcoding-pic.oss-cn-hangzhou.aliyuncs.com/iluvcodingMain/imgs/carousel/carousel-coding-1.jpg" alt="First slide">
             <div class="jumbotron">
             <div class="container">
                 <div class="carousel-caption">
                     <h1>Coding</h1>
                     <p>世界的未来是程序员的</p>
+                    <p>Programmers R The Prophets.</p>
                     <p><a class="btn btn-lg btn-primary" href="#" role="button">哔--!</a></p>
                 </div>
             </div>
             </div>
         </div>
         <div class="item">
-            <img class="second-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Second slide">
+            <img class="second-slide" src="http://iluvcoding-pic.oss-cn-hangzhou.aliyuncs.com/iluvcodingMain/imgs/carousel/carousel-living-2.jpg" alt="Second slide">
             <div class="jumbotron">
             <div class="container">
                 <div class="carousel-caption">
                     <h1>Living</h1>
-                    <p>生活不是眼前的苟且，也不是诗和远方，而是找回自我的平凡之路。</p>
+                    <p>生活不是眼前的苟且,也不是诗和远方,而是找回自我的平凡之路</p>
+                    <p>Fuck yourself,Fucked by the world,Or go fuck the wolrd.</p>
                     <p><a class="btn btn-lg btn-primary" href="#" role="button">发现我</a></p>
                 </div>
             </div>
             </div>
         </div>
         <div class="item">
-            <img class="third-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Third slide">
+            <img class="third-slide" src="http://iluvcoding-pic.oss-cn-hangzhou.aliyuncs.com/iluvcodingMain/imgs/carousel/carousel-gaming-2.jpg" alt="Third slide">
             <div class="jumbotron">
             <div class="container">
                 <div class="carousel-caption">
                     <h1>Gaming</h1>
-                    <p>人生不是游戏，游戏丰富人生</p>
+                    <p>人生不是游戏,游戏丰富人生</p>
+                    <p>Life is not a game,But full it with games.</p>
                     <p><a class="btn btn-lg btn-primary" href="#" role="button">Start</a></p>
                 </div>
             </div>
