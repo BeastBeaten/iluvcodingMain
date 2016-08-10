@@ -7,9 +7,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <script typt="text/javascript" src="http://pic.ofcard.com/cards/js/angular/jweixin.js"></script>
-    <title ng-bind = "userData.title"></title>
-    <link type="text/css" rel="stylesheet" href="http://pic.ofcard.com/cards/standard/css/${style}" />
-    <!--  <link type="text/css" rel="stylesheet" href="/statics/js/css/ionic.app.css" />-->
+    <title>未知请求</title>
 </head>
 
 
@@ -26,12 +24,6 @@
         </div>
     </div>
 
-<input type = "hidden" value = "${code}" id = "code"/>
-<input type = "hidden" value = "${menu}" id = "menu"/>
-<input type = "hidden" value = '${authconfig}' id = "config"/>
-<input type = "hidden" value = "${rechargeAccount}" id = "rechargeAccount"/>
-<input type = "hidden" value = "${faceValue}" id = "faceValue"/>
-</body>
 
-<script data-main="/js/app-mobile-standard.min.js" src="http://pic.ofcard.com/cards/js/angular/requiremin.js"></script>
+</body>
 </html>
