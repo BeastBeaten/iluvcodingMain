@@ -37,20 +37,16 @@
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="#">首页</a></li>
-                        <li><a href="#about">关于我</a></li>
-                        <li><a href="#contact">联系我</a></li>
-                        <%--<li class="dropdown">--%>
-                            <%--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>--%>
-                            <%--<ul class="dropdown-menu">--%>
-                                <%--<li><a href="#">Action</a></li>--%>
-                                <%--<li><a href="#">Another action</a></li>--%>
-                                <%--<li><a href="#">Something else here</a></li>--%>
-                                <%--<li role="separator" class="divider"></li>--%>
-                                <%--<li class="dropdown-header">Nav header</li>--%>
-                                <%--<li><a href="#">Separated link</a></li>--%>
-                                <%--<li><a href="#">One more separated link</a></li>--%>
-                            <%--</ul>--%>
-                        <%--</li>--%>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">关于我 <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a><strong>不懂互联网产品设计的全栈工程师不是个好架构</strong></a></li>
+                                <li role="separator" class="divider"></li>
+                                <li class="dropdown-header">联系方式</li>
+                                <li><a><strong>邮箱:</strong>qingshou@iluvcoding.com</a></li>
+                                <li><a><strong>微信:</strong><img class="featurette-image img-responsive center-block" src="http://iluvcoding-pic.oss-cn-hangzhou.aliyuncs.com/iluvcodingMain/imgs/info/wxcode.jpg"  alt="我的微信二维码"></a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -76,7 +72,7 @@
                     <h1>Coding</h1>
                     <p>世界的未来是程序员的</p>
                     <p>Programmers R The Prophets.</p>
-                    <p><a class="btn btn-lg btn-primary" href="/web/preview/coding" role="button">哔--!</a></p>
+                    <p><a class="btn btn-lg btn-primary" href="/web/preview#/preview/coding" role="button">哔--!</a></p>
                 </div>
             </div>
             </div>
@@ -89,7 +85,7 @@
                     <h1>Living</h1>
                     <p>生活不是眼前的苟且,也不是诗和远方,而是找回自我的平凡之路</p>
                     <p>Fuck yourself,Fucked by the world,Or go fuck the wolrd.</p>
-                    <p><a class="btn btn-lg btn-primary" href="/web/preview/living" role="button">发现我</a></p>
+                    <p><a class="btn btn-lg btn-primary" href="/web/preview#/preview/living" role="button">发现我</a></p>
                 </div>
             </div>
             </div>
@@ -102,7 +98,7 @@
                     <h1>Gaming</h1>
                     <p>人生不是游戏,游戏丰富人生</p>
                     <p>Life is not a game,But full it with games.</p>
-                    <p><a class="btn btn-lg btn-primary" href="/web/preview/gaming" role="button">Start</a></p>
+                    <p><a class="btn btn-lg btn-primary" href="/web/preview#/preview/gaming" role="button">Start</a></p>
                 </div>
             </div>
             </div>

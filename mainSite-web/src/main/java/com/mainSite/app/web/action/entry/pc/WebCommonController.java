@@ -31,20 +31,10 @@ public class WebCommonController extends BaseController{
      * PC端首页入口
      * @return
      */
-    @RequestMapping(value = "preview/{previewtype}",method = {RequestMethod.GET,RequestMethod.POST})
-    public String webIndex(@PathVariable String previewtype,Model model, HttpServletRequest request,HttpServletResponse response){
+    @RequestMapping(value = "preview",method = {RequestMethod.GET,RequestMethod.POST})
+    public String webIndex(Model model, HttpServletRequest request,HttpServletResponse response){
 
-        if(previewtype.equals("coding")||previewtype.equals("living")||previewtype.equals("gaming")){
-
-            model.addAttribute("previewtype",previewtype);
             return "web/preview";
-
-        }else{
-
-            return "404";
-
-        }
-
 
     }
 

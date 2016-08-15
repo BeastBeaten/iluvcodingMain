@@ -9,18 +9,21 @@ require.config({
     //配置angular的路径
     // baseUrl:'js',
     paths:{
-//        "jquery":"http://pic.ofcard.com/cards/js/angular/jquery",
-//        "angular":"http://pic.ofcard.com/cards/js/angular/angularmin",
-//        "angular-ui-route":"http://pic.ofcard.com/cards/js/angular/angular-ui-router",
-//        "angular-cookie":"http://pic.ofcard.com/cards/js/angular/angular-cookie",
-//        "ionic":"http://pic.ofcard.com/cards/js/angular/ionicbundlemin",
-//        "tools":"http://pic.ofpay.com/cards/js/lib/tools"
-        "jquery":"../lib/js/jquery",
-        "angular":"../lib/js/angularmin",
-        "angular-ui-route":"../lib/js/angular-ui-router",
-        "angular-cookie":"../lib/js/angular-cookie",
-        "ionic":"../lib/js/ionicbundlemin",
-        "tools":"../lib/util/tools"
+//        "jquery":"../lib/js/jquery",
+//        "angular":"../lib/js/angularmin",
+//        "angular-ui-route":"../lib/js/angular-ui-router",
+//        "angular-cookie":"../lib/js/angular-cookie",
+//        "ionic":"../lib/js/ionicbundlemin",
+//        "tools":"../lib/util/tools"
+
+        "jquery":"http://pic.ofcard.com/cards/js/angular/jquery",
+        "angular":"http://pic.ofcard.com/cards/js/angular/angularmin",
+        "angular-ui-route":"http://pic.ofcard.com/cards/js/angular/angular-ui-router",
+        "angular-cookie":"http://pic.ofcard.com/cards/js/angular/angular-cookie",
+        "ionic":"http://pic.ofcard.com/cards/js/angular/ionicbundlemin",
+        "tools":"http://pic.ofpay.com/cards/js/lib/tools"
+
+
     },
     //这个配置是你在引入依赖的时候的包名
     shim:{
@@ -64,7 +67,7 @@ require(['jquery','tools','angular','angular-ui-route','ionic','angular-cookie',
 
         ]);
 
-        module.run(['$rootScope', '$state', '$stateParams', '$location','$cookieStore',function($rootScope,$state,$stateParams,$location,$cookieStore){
+        module.run(['$rootScope', '$state', '$stateParams', '$location','$cookieStore','MenuService',function($rootScope,$state,$stateParams,$location,$cookieStore,MenuService){
             $rootScope.$state = $state;
             $rootScope.$stateParams = $stateParams;
 

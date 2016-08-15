@@ -20,126 +20,8 @@
 </head>
 
 <body style="padding-top:50px">
-<div class="navbar-wrapper">
-    <div class="container">
 
-        <nav class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="http://www.iluvcoding.com/">C.L.G-Ing</a>
-                </div>
-                <div id="navbar" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">开发<span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">语言&开发</a></li>
-                                <li><a href="#">架构&设计</a></li>
-                                <li><a href="#">开源&社区</a></li>
-                                <li><a href="#">文化&方法</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">生活<span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">旅行&摄影</a></li>
-                                <li><a href="#">音乐&艺术</a></li>
-                                <li><a href="#">本期邪恶搞笑囧图</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">游戏<span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">前沿游讯</a></li>
-                                <li><a href="#">经典攻略</a></li>
-                                <li><a href="#">资源共享</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-    </div>
-</div>
-
-
-<!-- Marketing messaging and featurettes
-================================================== -->
-<!-- Wrap the rest of the page in another container to center all the content. -->
-
-<div class="container marketing">
-
-    <!-- START THE FEATURETTES -->
-
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-        <div class="col-md-7">
-            <h2 class="featurette-heading">Angular2 With Typescript<span class="text-muted">灵动的下一代前端开发模型</span></h2>
-            <p class="lead">从“前后端分离”到“只有前端”，近几年各类前端开发框架大方异彩，其中基于ECMAScript5到6的各类特性的应用也趋于成熟，让我们看一下进几年的几个主流前端框架，再延伸到目前还在预热阶段的Angular2的特点和前端框架未来演进方向。</p>
-        </div>
-        <div class="col-md-5">
-            <%--<img class="featurette-image img-responsive center-block" src="http://iluvcoding-pic.oss-cn-hangzhou.aliyuncs.com/iluvcodingMain/imgs/mainpic/angularjs2.jpg"  alt="Generic placeholder image">--%>
-        </div>
-        <div class="col-md-7">
-            <p class="text-muted">作者：勍兽 | 发布时间：2016-07-25 10:13:46 |  <button type="button" class="btn btn-xs btn-link"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span></button>  |  <button type="button" class="btn btn-xs btn-link"><span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></button></p>
-            <%--<img class="featurette-image img-responsive center-block" src="#" data-src="holder.js/500x500/auto" alt="Generic placeholder image">--%>
-        </div>
-        <div class="col-md-5"></div>
-    </div>
-
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-        <div class="col-md-7 col-md-push-5">
-            <h2 class="featurette-heading">Tommy Emmanuel<span class="text-muted">澳大利亚国宝级吉他大师</span></h2>
-            <p class="lead">老Tommy是我的偶像加激励我吉他学习路上的灵魂导师，记得第一次知道这个名字是我的吉他老师在放光盘，里面一个白发大叔用一把吉他轻松写意的弹出一个乐队一样的声乐效果，突然发现原来吉他还能玩成这样，就像人生打开了一扇新的大门，让我们一起多了解下这位大叔和指弹吉他演奏。</p>
-        </div>
-        <div class="col-md-5 col-md-pull-7">
-
-        </div>
-        <div class="col-md-7 col-md-push-5">
-            <p class="text-muted">作者：勍兽 | 发布时间：2016-08-03 16:15:31 |  <button type="button" class="btn btn-xs btn-link"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span></button>  |  <button type="button" class="btn btn-xs btn-link"><span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></button></p>
-        </div>
-        <div class="col-md-5 col-md-pull-7"></div>
-    </div>
-
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-        <div class="col-md-7">
-            <h2 class="featurette-heading">Blizzard<span class="text-muted">暴雪出品必属精品</span></h2>
-            <p class="lead">从80后熟悉的星际争霸，到痴迷了一代人的暗黑破坏神系列，到中国电子竞技巅峰的WAR3,到全球现象级游戏的魔兽世界，再到最近风靡全世界的守望先锋。让我们一起随着游戏人青春的轨迹，了解一下暴雪公司的前世今生。</p>
-        </div>
-        <div class="col-md-5">
-
-        </div>
-        <div class="col-md-7">
-            <p class="text-muted">作者：勍兽 | 发布时间：2016-07-21 08:14:23 |  <button type="button" class="btn btn-xs btn-link"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span></button>  |  <button type="button" class="btn btn-xs btn-link"><span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></button></p>
-        </div>
-        <div class="col-md-5"></div>
-    </div>
-
-    <hr class="featurette-divider">
-
-    <!-- /END THE FEATURETTES -->
-
-
-    <!-- FOOTER -->
-    <footer>
-        <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>© Copyright 2016. 勍兽 | 苏ICP备16038922号-1</p>
-    </footer>
-
-</div><!-- /.container -->
-
+<div data-ui-view=""></div>
 
 <!-- Bootstrap core JavaScript
 ================================================== -->
@@ -148,5 +30,7 @@
 <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="http://iluvcoding-pic.oss-cn-hangzhou.aliyuncs.com/iluvcodingMain/js/assets/e10-viewport-bug-workaround.js"></script>
+
+<script data-main="http://iluvcoding-pic.oss-cn-hangzhou.aliyuncs.com/iluvcodingMain/js/deploy/app-web-index.min.js" src="http://iluvcoding-pic.oss-cn-hangzhou.aliyuncs.com/iluvcodingMain/js/lib/requiremin.js"></script>
 </body>
 </html>
