@@ -9,7 +9,8 @@ define(['angular'], function(angular) {
 
     app.config(['$stateProvider','$urlRouterProvider', function($stateProvider,$urlRouterProvider) {
 
-        $urlRouterProvider.when("", "/preview");
+        $urlRouterProvider.when("", "/preview/coding")
+        $urlRouterProvider.when("/preview", "/preview/coding");
 
         $stateProvider
             .state("preview", {

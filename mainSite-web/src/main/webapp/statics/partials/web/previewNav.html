@@ -11,11 +11,7 @@
             <h3>最新讯息</h3>
             <hr class="featurette-divider">
             <ul class="nav nav-tabs">
-                <li role="presentation" class="active"><a href="#">语言</a></li>
-                <li role="presentation"><a href="#">架构</a></li>
-                <li role="presentation"><a href="#">开源</a></li>
-                <li role="presentation"><a href="#">文化</a></li>
-                <li role="presentation"><a href="#">更多...</a></li>
+                <li role="presentation" ng-repeat="menuTab in menuTabs"><a>{{menuTab}}</a></li>
             </ul>
             <ul class="list-unstyled" style="padding-top: 10px">
                 <li><p><span class="glyphicon glyphicon-file" aria-hidden="true"></span>测试文章标题    2016-08-03</p></li>

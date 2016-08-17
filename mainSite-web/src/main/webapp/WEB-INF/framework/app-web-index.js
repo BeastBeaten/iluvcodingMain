@@ -71,6 +71,7 @@ require(['jquery','tools','angular','angular-ui-route','ionic','angular-cookie',
             $rootScope.$state = $state;
             $rootScope.$stateParams = $stateParams;
 
+            $rootScope.menuNavs = MenuService.menu;
 
         }]);
 

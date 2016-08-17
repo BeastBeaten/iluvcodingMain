@@ -17,20 +17,20 @@
 
     <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <link href="http://iluvcoding-pic.oss-cn-hangzhou.aliyuncs.com/iluvcodingMain/css/carousel.css" rel="stylesheet">
+
+
 </head>
 
 <body style="padding-top:50px">
 
 <div data-ui-view=""></div>
 
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
+
 <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="http://iluvcoding-pic.oss-cn-hangzhou.aliyuncs.com/iluvcodingMain/js/assets/e10-viewport-bug-workaround.js"></script>
-
 <script data-main="http://iluvcoding-pic.oss-cn-hangzhou.aliyuncs.com/iluvcodingMain/js/deploy/app-web-index.min.js" src="http://iluvcoding-pic.oss-cn-hangzhou.aliyuncs.com/iluvcodingMain/js/lib/requiremin.js"></script>
+
+
 </body>
 </html>
