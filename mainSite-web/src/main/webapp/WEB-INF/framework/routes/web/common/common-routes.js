@@ -18,21 +18,10 @@ define(['angular'], function(angular) {
                 templateUrl:'/partials/web/previewTab.html',
                 controller:"PreviewCtrl"
             })
-            .state("preview.coding", {
-                url:"/coding",
-                templateUrl:'/partials/web/previewNav.html',
-                controller:"PreviewCtrl"
-            })
-            .state("preview.living", {
-                url:"/living",
-                templateUrl:'/partials/web/previewNav.html',
-                controller:"PreviewCtrl"
-            })
-            .state("preview.gaming", {
-                url:"/gaming",
+            .state("preview.type", {
+                url:"/:type",
                 templateUrl:'/partials/web/previewNav.html',
                 controller:"PreviewCtrl"
             });
-
     }]);
 });

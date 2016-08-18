@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <link rel="shortcut icon" href="http://iluvcoding-pic.oss-cn-hangzhou.aliyuncs.com/iluvcodingMain/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="http://pic.iluvcoding.com/iluvcodingMain/coding.ico" type="image/x-icon">
 
     <title>Coding,Living,Gaming</title>
 
@@ -16,7 +16,7 @@
     <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
 
     <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-    <link href="http://iluvcoding-pic.oss-cn-hangzhou.aliyuncs.com/iluvcodingMain/css/carousel.css" rel="stylesheet">
+    <link href="http://pic.iluvcoding.com/iluvcodingMain/css/carousel.css" rel="stylesheet">
 
 
 </head>
@@ -28,8 +28,8 @@
 
 <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script src="http://iluvcoding-pic.oss-cn-hangzhou.aliyuncs.com/iluvcodingMain/js/assets/e10-viewport-bug-workaround.js"></script>
-<script data-main="http://iluvcoding-pic.oss-cn-hangzhou.aliyuncs.com/iluvcodingMain/js/deploy/app-web-index.min.js" src="http://iluvcoding-pic.oss-cn-hangzhou.aliyuncs.com/iluvcodingMain/js/lib/requiremin.js"></script>
+<script src="http://pic.iluvcoding.com/iluvcodingMain/js/assets/e10-viewport-bug-workaround.js"></script>
+<script data-main="http://pic.iluvcoding.com/iluvcodingMain/js/deploy/app-web-index.min.js" src="http://pic.iluvcoding.com/iluvcodingMain/js/lib/requiremin.js"></script>
 
 
 </body>

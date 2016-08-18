@@ -14,7 +14,7 @@
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li ng-repeat="menuNav in menuNavs" ui-sref="{{menuNav.sref}}"  ng-class="{active:menuNav.id == curTab }"><a>{{menuNav.name}}</a></li>
+                        <li ng-repeat="menuNav in menuNavs" ui-sref="preview.type({type : menuNav.id })"  ng-class="{active:menuNav.id == curTab }"><a>{{menuNav.name}}</a></li>
                     </ul>
                 </div>
             </div>
