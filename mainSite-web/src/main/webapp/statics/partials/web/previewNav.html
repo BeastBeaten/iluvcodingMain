@@ -5,17 +5,11 @@
             <h3>最新讯息</h3>
             <hr class="featurette-divider">
             <ul class="nav nav-tabs">
-                <li role="presentation" ng-repeat="menuTab in menuTabs"><a>{{menuTab}}</a></li>
+                <li role="presentation" ng-repeat="menuTab in menuTabs" ui-sref="preview.type.filetype({filetype : menuTab.id })" ng-class="{active:menuTab.id == curMenuTab }"><a>{{menuTab.name}}</a></li>
             </ul>
-            <ul class="list-unstyled" style="padding-top: 10px">
-                <li><p><span class="glyphicon glyphicon-file" aria-hidden="true"></span>测试文章标题    2016-08-03</p></li>
-                <li><p><span class="glyphicon glyphicon-file" aria-hidden="true"></span>测试文章标题    2016-08-03</p></li>
-                <li><p><span class="glyphicon glyphicon-file" aria-hidden="true"></span>测试文章标题    2016-08-03</p></li>
-                <li><p><span class="glyphicon glyphicon-file" aria-hidden="true"></span>测试文章标题    2016-08-03</p></li>
-                <li><p><span class="glyphicon glyphicon-file" aria-hidden="true"></span>测试文章标题测试文章标题测试文章标题测试文章标题    2016-08-03</p></li>
-                <li><p><span class="glyphicon glyphicon-file" aria-hidden="true"></span>测试文章标题    2016-08-03</p></li>
-                <li><p><span class="glyphicon glyphicon-file" aria-hidden="true"></span>测试文章标题    2016-08-03</p></li>
-            </ul>
+
+            <div ui-view=""/>
+
         </div>
         <div class="col-md-5">
 

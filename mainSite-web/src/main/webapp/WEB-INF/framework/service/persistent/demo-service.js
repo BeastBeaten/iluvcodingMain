@@ -9,7 +9,9 @@
 
 define(['angular'], function(angular) {
 
-    var demoService = angular.module('mainSite.service.order.orderModule', []);
+    var demoService = angular.module('mainSite.service.demo.demoModule', []);
+
+      demoService.factory('DemoService',['$http', "$state",'$rootScope','$scope','RequestUtil', function($http, $state, $rootScope,$scope,RequestUtil){
 
 //    orderService.factory('OrderService',['$http', "$state",'$rootScope','RequestUtil', function($http, $state, $rootScope,RequestUtil){
 //        var getRandomId = function(){
@@ -41,5 +43,5 @@ define(['angular'], function(angular) {
 //                return RequestUtil.request('/order/orderList?randomId='+getRandomId(), QueryForm, callback, '正在查询');
 //            }
 //        }
-//    }]);
+      }]);
 });
