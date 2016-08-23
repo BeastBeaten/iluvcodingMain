@@ -38,9 +38,6 @@ define(['angular'],function(angular){
         //筛选加载菜单项
         $rootScope.menuTabs = getMenuTabsById(urlPath);
 
-
-
-
     }]);
 
     app.controller('PageListCtrl',['$rootScope','$scope','$state','$stateParams','$location','MenuService',function($rootScope,$scope,$state,$stateParams,$location,MenuService){
@@ -86,10 +83,6 @@ define(['angular'],function(angular){
 
         //加载对应项文章
         $rootScope.files = getFileByType(urlPath);
-
-
-
-
 
     }]);
 

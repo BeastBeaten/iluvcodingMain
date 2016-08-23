@@ -1,3 +1,11 @@
-<ul class="list-unstyled" style="padding-top: 10px">
-    <li ng-repeat="file in files" ><p><span class="glyphicon glyphicon-file" aria-hidden="true"></span>{{file.title}}</p></li>
-</ul>
+<div class="row featurette" ng-repeat="file in files">
+    <div class="col-md-12">
+        <h2 class="featurette-heading">{{file.title}}</h2>
+        <p class="lead">{{file.title}}</p>
+    </div>
+    <div class="col-md-12">
+        <p class="text-muted">作者：勍兽 | 发布时间：2016-07-25 10:13:46 |  <button type="button" class="btn btn-xs btn-link"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span></button>  |  <button type="button" class="btn btn-xs btn-link"><span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></button></p>
+    </div>
+</div>
+
+<hr class="featurette-divider">

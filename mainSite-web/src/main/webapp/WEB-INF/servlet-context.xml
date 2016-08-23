@@ -34,7 +34,7 @@
     <mvc:resources mapping="/assets/js/**" location="/WEB-INF/lib/js/assets"/>
     <mvc:resources mapping="/css/**" location="/WEB-INF/lib/css/"/>
     <mvc:resources mapping="/partials/**" location="/statics/partials/"/>
-    <mvc:resources mapping="/partials-custom/**" location="/statics/partials-common/"/>
+    <mvc:resources mapping="/partials-common/**" location="/statics/partials-common/"/>
 
     <mvc:default-servlet-handler />
 
