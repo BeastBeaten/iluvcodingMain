@@ -31,5 +31,6 @@ define(['angular'], function(angular) {
                 templateUrl:'/partials/web/pagelist.html',
                 controller:"PageListCtrl"
             });
+
     }]);
 });
