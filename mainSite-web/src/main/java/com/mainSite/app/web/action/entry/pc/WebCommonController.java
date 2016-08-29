@@ -38,6 +38,17 @@ public class WebCommonController extends BaseController{
 
     }
 
+    /**
+     * 文章详情
+     * @return
+     */
+    @RequestMapping(value = "detail",method = {RequestMethod.GET,RequestMethod.POST})
+    public String webDetail(Model model, HttpServletRequest request,HttpServletResponse response){
+
+        return "web/detail";
+
+    }
+
 
 
 }

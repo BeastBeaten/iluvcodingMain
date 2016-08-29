@@ -25,25 +25,6 @@
 
 <div data-ui-view=""></div>
 
-<!-- fileModal -->
-<div class="modal fade" id="fileModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">{{fileChosen.title}}</h4>
-            </div>
-            <div class="modal-body">
-                {{fileChosen.content}}
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                <button type="button" class="btn btn-primary">点赞</button>
-            </div>
-        </div>
-    </div>
-</div>
-
 <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script src="http://pic.iluvcoding.com/iluvcodingMain/js/assets/e10-viewport-bug-workaround.js"></script>

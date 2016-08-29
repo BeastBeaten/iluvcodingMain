@@ -84,26 +84,6 @@ define(['angular'],function(angular){
         //加载对应项文章
         $rootScope.files = getFileByType(urlPath);
 
-        $scope.fileDetail = function(id){
-
-            var tempFileDetail = MenuService.fileDetail;
-            var fileChosen2;
-
-            for (var i in tempFileDetail) {
-
-                  if(tempFileDetail[i].id == id){
-
-                      fileChosen2 = tempFileDetail[i];
-
-                      break;
-                  }
-
-            }
-
-            $rootScope.fileChosen = fileChosen2;
-
-        };
-
     }]);
 
 });

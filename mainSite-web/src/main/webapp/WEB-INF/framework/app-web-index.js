@@ -9,12 +9,6 @@ require.config({
     //配置angular的路径
     // baseUrl:'js',
     paths:{
-//        "jquery":"../lib/js/jquery",
-//        "angular":"../lib/js/angularmin",
-//        "angular-ui-route":"../lib/js/angular-ui-router",
-//        "angular-cookie":"../lib/js/angular-cookie",
-//        "ionic":"../lib/js/ionicbundlemin",
-//        "tools":"../lib/util/tools"
 
         "jquery":"http://pic.ofcard.com/cards/js/angular/jquery",
         "angular":"http://pic.ofcard.com/cards/js/angular/angularmin",
@@ -72,6 +66,13 @@ require(['jquery','tools','angular','angular-ui-route','ionic','angular-cookie',
             $rootScope.$stateParams = $stateParams;
 
             $rootScope.menuNavs = MenuService.menu;
+
+            $rootScope.goDetail = function(id){
+
+//                window.location.href="/web/detail/"+id;
+                window.location.href="/web/detail/";
+
+            };
 
         }]);
 
