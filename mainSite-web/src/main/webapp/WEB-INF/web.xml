@@ -36,15 +36,15 @@
     </filter>
 
 
-    <servlet>
-        <servlet-name>ViewStatusMessages</servlet-name>
-        <servlet-class>ch.qos.logback.classic.ViewStatusMessagesServlet</servlet-class>
-    </servlet>
+    <!--<servlet>-->
+        <!--<servlet-name>ViewStatusMessages</servlet-name>-->
+        <!--<servlet-class>ch.qos.logback.classic.ViewStatusMessagesServlet</servlet-class>-->
+    <!--</servlet>-->
 
-    <servlet-mapping>
-        <servlet-name>ViewStatusMessages</servlet-name>
-        <url-pattern>/lbClassicStatus</url-pattern>
-    </servlet-mapping>
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>ViewStatusMessages</servlet-name>-->
+        <!--<url-pattern>/lbClassicStatus</url-pattern>-->
+    <!--</servlet-mapping>-->
 
     <filter-mapping>
         <filter-name>characterEncodingFilter</filter-name>

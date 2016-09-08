@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mainSite.app.persistence.mysql.main.ArticleMapper">
+
+    <!-- 根据条件获取文章列表 -->
+    <select id="queryArticles" parameterType="java.util.HashMap" resultType="com.mainSite.app.domain.mysql.Iluvcoding_Main_Articles">
+        SELECT
+        a.*
+        FROM
+         iluvcoding_main_articles a
+        WHERE
+        <if test="id != null and id !=''">
+            AND a.id=#{id}
+        </if>
+        <if test="author != null and author != ''">
+            AND a.author = #{author}
+        </if>
+        <if test="navtype != null and navtype != ''">
+            AND a.navtype=#{navtype}
+        </if>
+        <if test="tabtype != null and tabtype != ''">
+            AND a.tabtype=#{tabtype}
+        </if>
+        ORDER BY
+        a.pubdate desc
+    </select>
+
+
+</mapper>

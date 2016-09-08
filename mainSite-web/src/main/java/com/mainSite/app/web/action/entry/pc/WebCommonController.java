@@ -1,21 +1,14 @@
 package com.mainSite.app.web.action.entry.pc;
 
+import com.mainSite.app.service.ArticlesService;
 import com.mainSite.app.web.action.BaseController;
-import net.sf.json.JSONObject;
-import org.apache.commons.collections.CollectionUtils;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.math.BigDecimal;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-import java.util.Map;
+
 
 /**
  *
@@ -26,6 +19,8 @@ import java.util.Map;
 @RequestMapping("/web")
 public class WebCommonController extends BaseController{
 
+    @Autowired
+    private ArticlesService articlesService;
 
     /**
      * PC端首页入口
@@ -46,6 +41,22 @@ public class WebCommonController extends BaseController{
     public String webDetail(Model model, HttpServletRequest request,HttpServletResponse response){
 
         return "web/detail";
+
+    }
+
+
+    /**
+     * 测试连接
+     * @return
+     */
+    @RequestMapping(value = "test",method = {RequestMethod.GET,RequestMethod.POST})
+    public String test(Model model, HttpServletRequest request,HttpServletResponse response){
+
+        String content = articlesService.getArticleById("Atc2016082910000008").getContent();
+
+        model.addAttribute("content",content);
+
+        return "web/test";
 
     }
 

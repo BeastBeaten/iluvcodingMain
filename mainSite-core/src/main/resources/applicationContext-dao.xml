@@ -14,6 +14,22 @@
     <!-- enable autowire -->
     <context:annotation-config />
 
+    <!-- enable transaction demarcation with annotations -->
+    <tx:annotation-driven />
+
+    <bean id="mysqlMainTransactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="mysqlDataSourceMain" />
+    </bean>
+
+    <bean id="mysqlMainSqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="mysqlDataSourceMain" />
+        <property name="typeAliasesPackage" value="com.mainSite.app.domain.mysql.main" />
+    </bean>
+
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.mainSite.app.persistence.mysql.main" />
+        <property name="sqlSessionFactoryBeanName" value="mysqlMainSqlSessionFactory" />
+    </bean>
 
 
 </beans>

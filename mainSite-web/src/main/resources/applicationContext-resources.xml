@@ -9,17 +9,12 @@
         <property name="ignoreUnresolvablePlaceholders" value="true" />
         <property name="locations">
             <list>
-                <!-- develop -->
+
+                <!-- product -->
                 <value>classpath:/config/app.properties</value>
-                <value>classpath:mainSite_config.properties</value>
+                <value>classpath*:mainSite_config.properties</value>
+                <value>classpath*:jdbc.properties</value>
 
-                <!--
-                <value>file:/apps/temp1/app.properties</value>
-                <value>file:/apps/temp1/openwebv2_config.properties</value>
-
-                <value>file:${CATALINA_BASE}/conf/app.properties</value>
-                <value>file:${CATALINA_BASE}/conf/openwebv2_config.properties</value>
-                -->
             </list>
         </property>
     </bean>
@@ -30,9 +25,34 @@
                 <!--
                 <value>file:${CATALINA_BASE}/conf/openwebv2_config.properties</value>
                 -->
-                <value>classpath:mainSite_config.properties</value>
+                <value>classpath*:mainSite_config.properties</value>
             </list>
         </property>
+    </bean>
+
+    <!-- mysqlMain -->
+    <bean id="mysqlDataSourceMain" class="org.apache.commons.dbcp.ManagedBasicDataSource" destroy-method="close">
+        <constructor-arg value="com.mainSite:name=mysqlDataSourceMain"/>
+        <property name="driverClassName" value="${mysql.jdbc.driverClassName}"></property>
+        <property name="url" value="${mysql.jdbc.url}"></property>
+        <property name="username" value="${mysql.jdbc.username}"></property>
+        <property name="password" value="${mysql.jdbc.password}"></property>
+
+        <property name="initialSize" value="2" />
+        <property name="maxIdle" value="5"></property>
+        <property name="maxActive" value="50"></property>
+        <property name="minIdle" value="1"></property>
+        <property name="maxWait" value="10000"></property>
+        <property name="removeAbandoned" value="true"></property>
+        <property name="removeAbandonedTimeout" value="60"></property>
+
+        <property name="testWhileIdle" value="true"/>
+        <property name="testOnBorrow" value="false"/>
+        <property name="testOnReturn" value="false"/>
+        <property name="validationQuery" value="select 1 from dual" />
+        <property name="validationQueryTimeout" value="1"/>
+        <property name="timeBetweenEvictionRunsMillis" value="30000"/>
+        <property name="numTestsPerEvictionRun" value="50"/>
     </bean>
 
     <!--<bean name="memcachedClientBuilder" class="net.rubyeye.xmemcached.XMemcachedClientBuilder">-->
