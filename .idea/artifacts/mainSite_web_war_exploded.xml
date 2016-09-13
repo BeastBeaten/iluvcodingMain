@@ -22,11 +22,23 @@
           <element id="library" level="project" name="Maven: org.hibernate:hibernate-validator:4.1.0.Final" />
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.5" />
           <element id="library" level="project" name="Maven: pinyin4j:pinyin4j:2.5.0" />
+          <element id="library" level="project" name="Maven: com.alibaba:fastjson:1.1.31" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.6.4" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.6.0" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.6.4" />
+          <element id="library" level="project" name="Maven: org.slf4j:jcl-over-slf4j:1.7.5" />
           <element id="library" level="project" name="Maven: org.slf4j:log4j-over-slf4j:1.7.5" />
-          <element id="library" level="project" name="Maven: ch.qos.logback:logback-classic:1.0.12" />
-          <element id="library" level="project" name="Maven: ch.qos.logback:logback-core:1.0.12" />
-          <element id="library" level="project" name="Maven: org.codehaus.janino:janino:2.6.1" />
-          <element id="library" level="project" name="Maven: org.codehaus.janino:commons-compiler:2.6.1" />
+          <element id="library" level="project" name="Maven: org.mybatis:mybatis:3.2.0" />
+          <element id="library" level="project" name="Maven: org.mybatis:mybatis-spring:1.2.0" />
+          <element id="library" level="project" name="Maven: org.mybatis.caches:mybatis-ehcache:1.0.2" />
+          <element id="library" level="project" name="Maven: net.sf.ehcache:ehcache-core:2.6.5" />
+          <element id="library" level="project" name="Maven: net.sf.ehcache:ehcache-jgroupsreplication:1.7" />
+          <element id="library" level="project" name="Maven: org.jgroups:jgroups:3.1.0.Final" />
+          <element id="library" level="project" name="Maven: commons-dbcp:commons-dbcp:1.4" />
+          <element id="library" level="project" name="Maven: commons-pool:commons-pool:1.5.5" />
+          <element id="library" level="project" name="Maven: net.ju-n.commons-dbcp-jmx:commons-dbcp-jmx-jdbc4:0.2.2" />
+          <element id="library" level="project" name="Maven: org.weakref:jmxutils:1.12" />
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.24" />
           <element id="library" level="project" name="Maven: org.springframework:spring-context:4.1.7.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-aop:4.1.7.RELEASE" />
           <element id="library" level="project" name="Maven: aopalliance:aopalliance:1.0" />
@@ -39,21 +51,16 @@
           <element id="library" level="project" name="Maven: org.apache.xbean:xbean-spring:3.13" />
           <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:4.1.7.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-web:4.1.7.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:4.1.7.RELEASE" />
+          <element id="library" level="project" name="Maven: org.aspectj:aspectjrt:1.6.12" />
           <element id="library" level="project" name="Maven: org.aspectj:aspectjweaver:1.6.12" />
           <element id="library" level="project" name="Maven: com.googlecode.xmemcached:xmemcached:2.0.0" />
           <element id="library" level="project" name="Maven: commons-codec:commons-codec:1.7" />
-          <element id="library" level="project" name="Maven: net.sf.ehcache:ehcache-jgroupsreplication:1.7" />
-          <element id="library" level="project" name="Maven: net.sf.ehcache:ehcache-core:2.5.2" />
-          <element id="library" level="project" name="Maven: org.jgroups:jgroups:3.1.0.Final" />
-          <element id="library" level="project" name="Maven: com.alibaba:fastjson:1.1.31" />
-          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.6.4" />
-          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.6.0" />
-          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.6.4" />
           <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpclient:4.2.6" />
           <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpcore:4.2.5" />
           <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpclient-cache:4.2.6" />
           <element id="library" level="project" name="Maven: net.sf.json-lib:json-lib:jdk15:2.4" />
-          <element id="library" level="project" name="Maven: commons-lang:commons-lang:2.6" />
+          <element id="library" level="project" name="Maven: commons-lang:commons-lang:2.5" />
           <element id="library" level="project" name="Maven: net.sf.ezmorph:ezmorph:1.0.6" />
           <element id="library" level="project" name="Maven: dom4j:dom4j:1.6.1" />
           <element id="library" level="project" name="Maven: xml-apis:xml-apis:1.0.b2" />
@@ -64,7 +71,6 @@
           <element id="library" level="project" name="Maven: javax.servlet:jstl:1.2" />
           <element id="library" level="project" name="Maven: io.netty:netty:3.9.6.Final" />
           <element id="library" level="project" name="Maven: redis.clients:jedis:2.1.0" />
-          <element id="library" level="project" name="Maven: commons-pool:commons-pool:1.6" />
           <element id="library" level="project" name="Maven: joda-time:joda-time:2.3" />
           <element id="library" level="project" name="Maven: commons-io:commons-io:2.4" />
           <element id="library" level="project" name="Maven: org.apache.poi:poi:3.9" />
