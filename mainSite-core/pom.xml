@@ -67,7 +67,10 @@
             <groupId>net.ju-n.commons-dbcp-jmx</groupId>
             <artifactId>commons-dbcp-jmx-jdbc4</artifactId>
         </dependency>
-
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
 
         <!-- SpringFramework -->
         <dependency>
@@ -109,9 +112,13 @@
 
         <dependency>
             <groupId>org.aspectj</groupId>
-            <artifactId>aspectjweaver</artifactId>
+            <artifactId>aspectjrt</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+        </dependency>
 
 
         <!-- test -->

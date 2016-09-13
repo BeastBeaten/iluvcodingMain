@@ -4,6 +4,7 @@ import com.mainSite.app.domain.mysql.Iluvcoding_Main_Articles;
 import com.mainSite.app.persistence.mysql.main.ArticleMapper;
 import com.mainSite.app.service.ArticlesService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.List;
@@ -12,6 +13,7 @@ import java.util.Map;
 /**
  * Created by zhouqing on 16-9-1.
  */
+@Service
 public class ArticlesServiceImpl implements ArticlesService{
 
     @Autowired

@@ -10,7 +10,7 @@
         a.*
         FROM
          iluvcoding_main_articles a
-        WHERE
+        <where>
         <if test="id != null and id !=''">
             AND a.id=#{id}
         </if>
@@ -23,6 +23,7 @@
         <if test="tabtype != null and tabtype != ''">
             AND a.tabtype=#{tabtype}
         </if>
+        </where>
         ORDER BY
         a.pubdate desc
     </select>
